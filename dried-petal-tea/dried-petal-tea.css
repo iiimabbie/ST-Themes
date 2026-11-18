@@ -1035,19 +1035,6 @@ body #dpt-mode-switch:focus-visible {
   outline: 1.5px dashed var(--mr-pink-deep) !important;
   outline-offset: 2px;
 }
-/* 載入時還不知道是白天或黑夜：載入畫面先用深色，結束到開關程式啟動前用深色蓋住，避免閃白 */
-html:not([data-dpt-mode]):not(:has(.splash-screen))::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 2147483646;
-  background: #1E2430;
-  pointer-events: none;
-  animation: dpt-veil-off 0.01s linear 5s forwards;
-}
-@keyframes dpt-veil-off {
-  to { visibility: hidden; }
-}
 /* 手機／窄螢幕：頂欄放不下，縮小後排進圖示列 */
 @media (max-width: 1000px) {
   body #dpt-mode-switch {
