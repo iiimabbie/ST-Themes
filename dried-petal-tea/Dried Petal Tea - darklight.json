@@ -30,7 +30,7 @@
     "enableZenSliders": false,
     "enableLabMode": false,
     "hotswap_enabled": true,
-    "custom_css": "@import url(\"https://iiimabbie.github.io/st-themes/dried-petal-tea/dried-petal-tea.css\");\n<script src=\"https://iiimabbie.github.io/st-themes/dried-petal-tea/dried-petal-tea.css\" data-run-at=\"early\"></script>",
+    "custom_css": "@import url(\"https://iiimabbie.github.io/ST-Themes/dried-petal-tea/dried-petal-tea.css\");\n<script src=\"https://iiimabbie.github.io/ST-Themes/dried-petal-tea/dried-petal-tea.css\" data-run-at=\"early\"></script>",
     "bogus_folders": true,
     "zoomed_avatar_magnification": false,
     "reduced_motion": true,

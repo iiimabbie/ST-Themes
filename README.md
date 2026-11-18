@@ -22,8 +22,8 @@ iiimabbie 的 SillyTavern 主題。每個主題一個資料夾，CSS 由 GitHub 
 ```
 
 ```css
-@import url("https://iiimabbie.github.io/st-themes/<主題名稱>/<主題名稱>.css");
-<script src="https://iiimabbie.github.io/st-themes/<主題名稱>/<主題名稱>.css" data-run-at="early"></script>
+@import url("https://iiimabbie.github.io/ST-Themes/<主題名稱>/<主題名稱>.css");
+<script src="https://iiimabbie.github.io/ST-Themes/<主題名稱>/<主題名稱>.css" data-run-at="early"></script>
 ```
 
 ## 授權
