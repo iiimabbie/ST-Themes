@@ -1,31 +1,54 @@
+<div align="center">
+
+[English](README.md) · [繁體中文](README.zh-TW.md) · [简体中文](README.zh-CN.md)
+
 # ST Themes
 
-iiimabbie 的 SillyTavern 主題。每個主題一個資料夾，CSS 由 GitHub Pages 提供，主題 JSON 只引用網址，改 CSS 後不必重新匯入。
+**SillyTavern themes by iiimabbie that update themselves after a single import**
 
-## 主題
+![Themes](https://img.shields.io/badge/themes-1-d9b8b4)
+![SillyTavern](https://img.shields.io/badge/SillyTavern-theme-e8a87c)
+![Theme Script](https://img.shields.io/badge/Theme%20Script-supported-a7b8c6)
+![License](https://img.shields.io/badge/license-CC%20BY--NC--ND%204.0-lightgrey)
 
-| 主題 | 說明 |
-| --- | --- |
-| [Dried Petal Tea](dried-petal-tea/) | 乾燥玫瑰與霧霾藍的手繪風主題，白天／黑夜可切換 |
+[Themes](#themes) · [Installation](#installation) · [How it works](#how-it-works) · [Links](#links)
 
-## 使用方式
+</div>
 
-1. 安裝 [ST-ThemeScript](https://github.com/iiimabbie/ST-ThemeScript)（日夜切換等腳本需要它；沒裝也能用，只是腳本不會執行）。
-2. 下載主題資料夾裡的 `.json`，在 SillyTavern 的「使用者設定 → 主題」匯入。
+## Themes
 
-## 資料夾結構
+<table>
+  <tr>
+    <td width="50%"><a href="dried-petal-tea/README.md"><img src="dried-petal-tea/screenshots/day.png" alt="Dried Petal Tea in day mode"></a></td>
+    <td>
+      <h3><a href="dried-petal-tea/README.md">Dried Petal Tea</a></h3>
+      A hand-drawn theme in dried rose and misty blue, with vine borders, flower sliders and hand-drawn icons. Switch between day and night from the top-right corner of the top bar.
+    </td>
+  </tr>
+</table>
 
-```
-<主題名稱>/
-  <主題名稱>.css   主題 CSS；需要腳本時，把 <script>...</script> 放在檔案最後
-  *.json           SillyTavern 主題檔，custom_css 只放下面兩行
-```
+## Installation
+
+1. Open a theme folder and download its `.json` file.
+2. In SillyTavern, open **User Settings**, click **Import** next to **Theme**, and choose the downloaded file.
+3. Themes with scripts, such as the day/night switch, need [Theme Script](https://github.com/iiimabbie/ST-ThemeScript). Without it the theme still works, but its script does not run.
+
+> [!TIP]
+> The first time you import a theme with a script, Theme Script shows the code and asks whether to run it. Once you approve, it does not ask again.
+
+## How it works
+
+The theme JSON's Custom CSS has only two lines. Both the CSS and the script load from GitHub Pages:
 
 ```css
-@import url("https://iiimabbie.github.io/ST-Themes/<主題名稱>/<主題名稱>.css");
-<script src="https://iiimabbie.github.io/ST-Themes/<主題名稱>/<主題名稱>.css" data-run-at="early"></script>
+@import url("https://iiimabbie.github.io/ST-Themes/<theme>/<theme>.css");
+<script src="https://iiimabbie.github.io/ST-Themes/<theme>/<theme>.css" data-run-at="early"></script>
 ```
 
-## 授權
+When a theme is updated, reload SillyTavern to get it; there is no need to import it again. GitHub Pages caches files, so an update can take up to about 10 minutes to show.
 
-[CC BY-NC-ND 4.0](LICENSE)：可以自己修改來用；分享原版要標明作者，不能商用，修改後的版本不能分享。
+## Links
+
+- [Theme Script](https://github.com/iiimabbie/ST-ThemeScript): the extension that lets themes run JavaScript
+- [Discord](https://discord.gg/P6kR5dpFVh): questions and bug reports
+- [Rainori on Notion](https://classy-christmas-5c1.notion.site/Rainori-4188b3769594807babe7d3fd4074d118): other works by iiimabbie
