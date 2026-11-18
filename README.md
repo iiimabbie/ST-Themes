@@ -25,3 +25,7 @@ iiimabbie 的 SillyTavern 主題。每個主題一個資料夾，CSS 由 GitHub 
 @import url("https://iiimabbie.github.io/st-themes/<主題名稱>/<主題名稱>.css");
 <script src="https://iiimabbie.github.io/st-themes/<主題名稱>/<主題名稱>.css" data-run-at="early"></script>
 ```
+
+## 授權
+
+[CC BY-NC-ND 4.0](LICENSE)：可以自己修改來用；分享原版要標明作者，不能商用，修改後的版本不能分享。
