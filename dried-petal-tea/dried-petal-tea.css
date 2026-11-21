@@ -504,6 +504,21 @@ body #sheld #extensionTopBar {
   -webkit-backdrop-filter: blur(10px) !important;
   backdrop-filter: blur(10px) !important;
 }
+/* Top Info Bar 展開的連線資訊列（伺服器圖示＋目前 API／模型）接在頂欄下面，
+   原本是整條 100% 寬、自帶框和下圓角，比頂欄左右各多 10px；改成跟頂欄同寬、同底色，只留下底線 */
+body #sheld #extensionConnectionProfiles {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  margin-top: 0 !important;
+  width: auto !important;
+  box-sizing: border-box !important;
+  border: none !important;
+  border-bottom: 1px solid var(--SmartThemeBorderColor) !important;
+  border-radius: 0 !important;
+  background-color: var(--SmartThemeChatTintColor) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+}
 /* 捲軸底部讓出圓角的高度，不然會直直超出圓角 */
 body #chat::-webkit-scrollbar-track {
   margin-bottom: 22px;
