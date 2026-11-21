@@ -75,6 +75,16 @@ body {
 /* 去掉聊天欄原本的黑色半透明遮罩 */
 #sheld::before { background-color: rgba(251, 248, 245, 0.35) !important; }
 
+/* 頂欄是整條拉滿的，兩側用 fillLeft／fillRight 貼邊的擴充面板（像狀態追蹤）原本從畫面最上面開始，
+   標題會被頂欄蓋住；跟酒館自己的側欄一樣往下讓出頂欄高度（Moonlit 也是這樣做） */
+@media (min-width: 1001px) {
+  body .drawer-content.fillLeft:not(#left-nav-panel),
+  body .drawer-content.fillRight:not(#right-nav-panel) {
+    top: var(--topBarBlockSize) !important;
+    height: calc(100dvh - var(--topBarBlockSize)) !important;
+  }
+}
+
 /* ---- 頂部選單列 ---- */
 #top-bar, #top-settings-holder {
   background-color: rgba(251, 248, 245, 0.9) !important;
