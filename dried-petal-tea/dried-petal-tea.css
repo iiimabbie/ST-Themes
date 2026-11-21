@@ -681,11 +681,15 @@ body .select2-container .select2-search--inline .select2-search__field {
   background: transparent !important;
   border: 0 !important;
 }
-/* 世界書頂端左邊的「啟用的世界書」多選欄，酒館給它最小 32px，旁邊「點選展開」標題列是 30px；
+/* 世界書頂端左邊的「啟用的世界書」多選欄是 32px，旁邊「點選展開」標題列是 30px；
    壓成 30px 兩邊才對齊（選了很多本時照樣會往下長） */
 body #WorldInfo .select2-selection--multiple {
   box-sizing: border-box;
   min-height: 30px !important;
+}
+/* 撐高的是裡面輸入框上方 7px 的間距（7 + 18 + 下內距 5 + 框 2 = 32），改成 5px，上下留白也一樣 */
+body #WorldInfo .select2-selection--multiple .select2-search__field {
+  margin-top: 5px !important;
 }
 /* 進階格式化：用 Chat Completion API 時，酒館標了 data-cc-null 的設定（反灰、沒作用）直接不顯示，
    上面的提示條也一起藏；判斷條件跟酒館反灰的規則一樣，用 Text Completion 時照常顯示。
