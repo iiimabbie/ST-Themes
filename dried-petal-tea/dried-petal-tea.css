@@ -700,8 +700,16 @@ body #chat {
   -webkit-backdrop-filter: blur(10px) !important;
   backdrop-filter: blur(10px) !important;
 }
-/* Top Info Bar（聊天上方那條）跟聊天欄同寬，兩角不要凸出去 */
+/* Top Info Bar（聊天上方那條）跟聊天欄同寬，兩角不要凸出去。
+   Moonlit 會把它改成置中浮動（fixed + translate），再給 #sheld 上方留一條空位；
+   這裡一律放回聊天欄頂端，開不開 Moonlit 都長一樣 */
+html body:has(#extensionTopBar) #sheld { padding-top: 0 !important; }
 body #sheld #extensionTopBar {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  opacity: 1 !important;
   margin-left: 10px !important;
   margin-right: 10px !important;
   width: auto !important;
