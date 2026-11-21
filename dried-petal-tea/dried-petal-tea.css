@@ -780,8 +780,7 @@ body #send_but.fa-paper-plane:hover::before { transform: rotate(-14deg) scale(1.
   --mr-spin-flower: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 20 20'><g fill='%23E6C6C2' stroke='%239A6863' stroke-width='1'><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(-5)'/><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(74)'/><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(142)'/><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(221)'/><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(289)'/></g><circle r='2.2' fill='%23F2DDB0' stroke='%239A6863' stroke-width='.9'/></svg>");
 }
 body .splash-screen .splash-logo { display: none !important; }
-body .splash-screen::before,
-body #chat .welcomePanel::before {
+body .splash-screen::before {
   content: "Dried Petal Tea" !important;
   white-space: nowrap;
   display: flex;
@@ -856,48 +855,17 @@ body #chat .mes[type="welcome_prompt"] {
 }
 
 /* =========================================================
-   首頁：上面是花圈和今日一句，最近的聊天沉到下面，做成手機聊天列表
+   首頁：最近的聊天沉到下面，做成手機聊天列表
    ========================================================= */
 body #chat .welcomePanel {
   flex: 1 0 auto;
+  justify-content: flex-end;
   gap: 8px;
   padding: 16px 6px 10px;
   background: none !important;
   border: none !important;
   box-shadow: none !important;
 }
-/* 花圈和今日一句一起置中在上方空白 */
-body #chat .welcomePanel::before { flex: 0 0 auto; margin: auto auto 0; }
-body #chat .welcomePanel:not(:has(.dpt-welcome-quote))::before { margin-bottom: auto; }
-body #chat .welcomePanel .dpt-welcome-quote {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  max-width: min(460px, 90%);
-  margin: 2px auto auto;
-  padding: 4px 12px;
-  border: none !important;
-  background: none !important;
-  box-shadow: none !important;
-  color: var(--mr-ink);
-  font: inherit;
-  text-align: center;
-  cursor: pointer;
-}
-body #chat .welcomePanel .dpt-welcome-quote-label { font-size: 0.8em; letter-spacing: 2px; color: var(--mr-pink-deep); }
-body #chat .welcomePanel .dpt-welcome-quote-text {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  overflow: hidden;
-  white-space: pre-wrap;
-  line-height: 1.7;
-}
-body #chat .welcomePanel .dpt-welcome-quote-meta { font-size: 0.8em; color: var(--mr-ink-soft); }
-body #chat .welcomePanel .dpt-welcome-quote:hover .dpt-welcome-quote-text { color: var(--mr-pink-deep); }
-
 /* 不要 ST 標誌、版本號和文件／GitHub／Discord 連結；齒輪和收合按鈕疊到「最近的聊天」那一列右邊 */
 body #chat .welcomePanel :is(.welcomeHeaderLogo, .welcomeHeaderVersionDisplay, .welcomeShortcuts a, .welcomeShortcutsSeparator) { display: none !important; }
 body #chat .welcomePanel .welcomeHeaderTitle {
@@ -955,6 +923,21 @@ body #chat .welcomeRecent .recentChatList .recentChat .avatar img {
   height: 100% !important;
   object-fit: cover;
   border-radius: 50% !important;
+}
+/* 釘選圖示：原本在左上角會被卡片圓角切掉，改成貼在頭像左上，墊一個小圓底 */
+body #chat .welcomeRecent .recentChatList .recentChat .recentChatPinned {
+  top: 6px;
+  left: 8px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--mr-paper);
+  color: var(--mr-pink-deep);
+  opacity: 1;
 }
 body #chat .welcomeRecent .recentChatList .recentChat .recentChatInfo { align-self: center; gap: 3px; }
 /* 名字後面的「– 聊天檔名」拿掉，像手機一樣只顯示名字（檔名滑鼠停著還看得到） */
@@ -1128,8 +1111,7 @@ body #chat .mes[is_user="true"] .mes_block {
   --mr-wreath: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M169.3 100.0 L166.6 117.8 L160.6 135.0 L146.3 146.3 L133.4 157.8 L117.8 166.6 L100.0 169.8 L82.2 166.3 L67.6 156.1 L51.7 148.3 L40.7 134.2 L31.5 118.4 L34.1 100.0 L35.6 82.7 L41.4 66.2 L50.3 50.3 L65.4 40.1 L83.0 36.7 L100.0 32.7 L117.6 34.4 L135.7 38.2 L147.1 52.9 L158.0 66.5 L164.1 82.8 L170.4 100.0' fill='none' stroke='%238FA399' stroke-width='1.8' stroke-linejoin='round'/><path d='M167.9 124.7 L157.4 140.2 L146.2 155.0 L130.7 165.9 L112.2 169.2 L93.8 170.9 L75.0 168.6 L59.4 157.9 L45.9 145.4 L33.9 130.8 L29.7 112.4 L30.1 93.9 L31.7 75.2 L41.0 58.7 L55.0 46.4 L69.5 34.6 L87.4 28.6 L106.1 30.2 L124.5 32.8' fill='none' stroke='%238FA399' stroke-width='1' stroke-linecap='round' opacity='.5'/><path transform='translate(167.0 111.8) rotate(65) scale(0.95)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(167.0 111.8) rotate(65) scale(0.95)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(155.7 139.0) rotate(340) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(155.7 139.0) rotate(340) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(131.9 160.0) rotate(117) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(131.9 160.0) rotate(117) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(94.1 167.7) rotate(400) scale(0.95)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(94.1 167.7) rotate(400) scale(0.95)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(68.1 160.0) rotate(173) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(68.1 160.0) rotate(173) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(41.1 134.0) rotate(455) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(41.1 134.0) rotate(455) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(32.0 102.4) rotate(233) scale(0.95)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(32.0 102.4) rotate(233) scale(0.95)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(38.4 71.3) rotate(510) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(38.4 71.3) rotate(510) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(58.1 46.4) rotate(287) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(58.1 46.4) rotate(287) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(90.5 32.7) rotate(567) scale(0.95)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(90.5 32.7) rotate(567) scale(0.95)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(123.3 36.1) rotate(345) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(123.3 36.1) rotate(345) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(150.5 54.5) rotate(623) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(150.5 54.5) rotate(623) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(164.7 79.0) rotate(397) scale(0.95)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(164.7 79.0) rotate(397) scale(0.95)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><g transform='translate(56.3 47.9) rotate(8) scale(2.0)'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/></g><g transform='translate(82.4 34.3) rotate(-20) scale(1.3)'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/></g><g transform='translate(41.1 66.0) rotate(15) scale(1.2)'><g fill='%237D93AC' stroke='%23C4D3E2' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23C4D3E2' stroke-width='1'/></g><g transform='translate(148.1 148.1) rotate(30) scale(1.7)'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/></g><g transform='translate(125.5 163.0) rotate(-8) scale(1.1)'><g fill='%237D93AC' stroke='%23C4D3E2' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23C4D3E2' stroke-width='1'/></g><g transform='translate(34.3 82.4) rotate(12) scale(1.0)'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/></g></svg>");
   --mr-spin-flower: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 20 20'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1'><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(-5)'/><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(74)'/><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(142)'/><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(221)'/><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(289)'/></g><circle r='2.2' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='.9'/></svg>");
 }
-:where(html[data-dpt-mode="night"]) body .splash-screen::before,
-:where(html[data-dpt-mode="night"]) body #chat .welcomePanel::before {
+:where(html[data-dpt-mode="night"]) body .splash-screen::before {
   color: #E8B9C1;
   text-shadow: 2px 0 0 #262D3A, -2px 0 0 #262D3A, 0 2px 0 #262D3A, 0 -2px 0 #262D3A, 2px 2px 0 #262D3A, -2px -2px 0 #262D3A, 2px -2px 0 #262D3A, -2px 2px 0 #262D3A, 4px 0 1px #262D3A, -4px 0 1px #262D3A, 0 4px 1px #262D3A, 0 -4px 1px #262D3A, 0 0 6px #262D3A !important;
 }
@@ -1637,29 +1619,6 @@ function jarList() {
 
 function saveJar() {
     dptCtx.saveSettingsDebounced();
-    refreshWelcomeQuotes();
-}
-
-// 首頁花圈下面放今日一句，點了打開花瓣罐；罐子空的就不放
-function addWelcomeQuote(panel) {
-    panel.querySelector('.dpt-welcome-quote')?.remove();
-    const jar = jarList();
-    if (!jar.length) return;
-    const pick = jar[dailyIndex(jar.length)];
-    const quote = el('button', 'dpt-welcome-quote');
-    quote.type = 'button';
-    quote.title = '打開花瓣罐';
-    quote.append(
-        el('span', 'dpt-welcome-quote-label', '今日一句'),
-        el('span', 'dpt-welcome-quote-text', pick.text),
-        el('span', 'dpt-welcome-quote-meta', `— ${pick.name || '某人'}`),
-    );
-    quote.addEventListener('click', openJar);
-    panel.prepend(quote);
-}
-
-function refreshWelcomeQuotes() {
-    chatEl?.querySelectorAll('.welcomePanel').forEach(addWelcomeQuote);
 }
 
 function sprinkle(x, y, count = 7, spread = 60, rise = 50) {
@@ -1751,11 +1710,7 @@ const chatObserver = new MutationObserver(records => {
         for (const node of record.addedNodes) {
             if (node.nodeType !== 1) continue;
             if (node.classList.contains('mes')) addPetalButton(node);
-            else if (node.classList.contains('welcomePanel')) addWelcomeQuote(node);
-            else {
-                node.querySelectorAll?.('.mes').forEach(addPetalButton);
-                node.querySelectorAll?.('.welcomePanel').forEach(addWelcomeQuote);
-            }
+            else node.querySelectorAll?.('.mes').forEach(addPetalButton);
         }
     }
 });
@@ -1879,7 +1834,6 @@ jarButton.addEventListener('click', openJar);
 host?.insertBefore(jarButton, button);
 
 addAllPetalButtons();
-refreshWelcomeQuotes();
 if (chatEl) {
     chatObserver.observe(chatEl, { childList: true, subtree: true });
     chatEl.addEventListener('pointerdown', onChatPointerDown, true);
@@ -1923,7 +1877,7 @@ function cleanupJar() {
     chatEl?.removeEventListener('pointerdown', onChatPointerDown, true);
     chatEl?.removeEventListener('click', onChatClick, true);
     chatEl?.removeEventListener('keydown', onChatKeyDown);
-    document.querySelectorAll('.dpt-petal-btn, .dpt-flying-petal, .dpt-welcome-quote').forEach(node => node.remove());
+    document.querySelectorAll('.dpt-petal-btn, .dpt-flying-petal').forEach(node => node.remove());
     jarButton.remove();
 }
 
