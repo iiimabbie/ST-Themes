@@ -680,6 +680,11 @@ body :is(.standoutHeader, #user-settings-block h4, #extensions_settings .inline-
 body .standoutHeader.range-block-title {
   margin-top: 5px;
 }
+/* API 連線頁：「API」「聊天補全來源」這類下拉沒有 text_pole，酒館只給下外距、上外距是 0，
+   會直接黏在上面的標題；補成跟 text_pole 一樣上下各 5px */
+body #rm_api_block select:not(.text_pole) {
+  margin-top: 5px;
+}
 /* select2 下拉清單不要陰影 */
 body .select2-dropdown {
   box-shadow: none !important;
