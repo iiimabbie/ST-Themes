@@ -900,15 +900,15 @@ body #chat .welcomePanel::before {
   display: block;
   align-self: center;
   box-sizing: border-box;
-  width: min(460px, calc(100% - 24px));
+  width: min(460px, calc(100% - 44px));
   aspect-ratio: 3 / 2;
-  margin: 14px 0 2px;
-  border: 26px solid transparent;
-  border-radius: 30px;
+  margin: 28px 0 14px;
+  border: 22px solid transparent;
+  border-radius: 26px;
   background:
     url("https://i.pinimg.com/736x/0c/4b/f9/0c4bf9163a8e43b1a20b0bc653583dc5.jpg") center / cover no-repeat padding-box,
     rgba(251, 248, 245, 0.85) border-box;
-  border-image: var(--mr-vine-frame) 48 / 26px / 0 round stretch;
+  border-image: var(--mr-vine-frame) 48 / 48px / 18px round stretch;
   filter: drop-shadow(0 4px 10px rgba(90, 85, 96, 0.12));
 }
 body #chat .welcomePanel::after {
@@ -934,7 +934,7 @@ body #chat .welcomePanel::after {
 }
 :where(html[data-dpt-mode="night"]) body #chat .welcomePanel::after { background: rgba(38, 45, 58, 0.7); color: #C4D3E2; }
 @media (max-width: 600px) {
-  body #chat .welcomePanel::before { border-width: 20px; border-image-width: 20px; border-radius: 24px; margin-top: 8px; }
+  body #chat .welcomePanel::before { width: calc(100% - 36px); border-width: 16px; border-image-width: 38px; border-image-outset: 14px; border-radius: 20px; margin: 20px 0 10px; }
 }
 
 /* 聊天列表：一張紙卡，每個聊天一列，用虛線隔開 */
