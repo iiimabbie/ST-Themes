@@ -1122,15 +1122,15 @@ body .mes .mes_text pre .code-copy {
   right: 14px !important;
 }
 
-/* ---- 訊息內的強調色互換：你的粉氣泡用藍色系、角色的藍氣泡用粉色系 ---- */
+/* ---- 訊息內的強調色：斜體統一用莫蘭迪綠，引用和代碼底色互換（你的粉氣泡用藍色系、角色的藍氣泡用粉色系） ---- */
 body .mes[is_user="true"] {
-  --mr-msg-em: #4E6577;
+  --mr-msg-em: #5E7058;
   --mr-msg-quote: #46637A;
   --mr-msg-code-bg: rgba(220, 228, 234, 0.78);
   --mr-msg-code-border: rgba(126, 147, 165, 0.45);
 }
 body .mes[is_user="false"] {
-  --mr-msg-em: #8A5A56;
+  --mr-msg-em: #5E7058;
   --mr-msg-quote: #7F5450;
   --mr-msg-code-bg: rgba(238, 221, 217, 0.82);
   --mr-msg-code-border: rgba(184, 142, 138, 0.50);
@@ -1155,13 +1155,13 @@ body .mes .mes_text code:not(pre code) {
   border-color: var(--mr-msg-code-border) !important;
 }
 :where(html[data-dpt-mode="night"]) body .mes[is_user="true"] {
-  --mr-msg-em: #A9BCD0;
+  --mr-msg-em: #A3B8A9;
   --mr-msg-quote: #B9CADB;
   --mr-msg-code-bg: rgba(43, 54, 72, 0.82);
   --mr-msg-code-border: rgba(143, 164, 186, 0.38);
 }
 :where(html[data-dpt-mode="night"]) body .mes[is_user="false"] {
-  --mr-msg-em: #E8B9C1;
+  --mr-msg-em: #A3B8A9;
   --mr-msg-quote: #E0B0B8;
   --mr-msg-code-bg: rgba(67, 52, 61, 0.86);
   --mr-msg-code-border: rgba(224, 176, 184, 0.38);
