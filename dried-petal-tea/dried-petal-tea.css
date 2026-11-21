@@ -855,11 +855,11 @@ body #chat .mes[type="welcome_prompt"] {
 }
 
 /* =========================================================
-   首頁：最近的聊天沉到下面，做成手機聊天列表
+   首頁：照片和一句話在上，下面接手機聊天列表
    ========================================================= */
 body #chat .welcomePanel {
   flex: 1 0 auto;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 8px;
   padding: 16px 6px 10px;
   background: none !important;
