@@ -662,6 +662,12 @@ body #extensions_settings .inline-drawer-toggle.inline-drawer-header,
 body #extensions_settings2 .inline-drawer-toggle.inline-drawer-header,
 body #user-settings-block .inline-drawer-header {
   background-color: transparent !important;
+  border: 1px solid rgba(126, 147, 165, 0.22) !important;
+}
+/* 擴充頁分隔線下面那段「（已淘汰）擴充功能 API」不顯示 */
+body #rm_extensions_block .extensions_block > hr,
+body #rm_extensions_block .extensions_block > div:has(#extensions_status, #extensions_url) {
+  display: none !important;
 }
 button {
   background-color: var(--mr-blue-soft);
@@ -1019,6 +1025,10 @@ body #chat .mes[is_user="true"] .mes_block {
 :where(html[data-dpt-mode="night"]) .standoutHeader {
   background-image: linear-gradient(rgba(143, 164, 186, 0.14), rgba(143, 164, 186, 0.14));
   border: 1px solid rgba(143, 164, 186, 0.22);
+}
+:where(html[data-dpt-mode="night"]) body :is(#extensions_settings, #extensions_settings2) .inline-drawer-toggle.inline-drawer-header,
+:where(html[data-dpt-mode="night"]) body #user-settings-block .inline-drawer-header {
+  border-color: rgba(143, 164, 186, 0.22) !important;
 }
 
 /* ---- 白天／黑夜切換開關（放在頂欄最右邊） ---- */
