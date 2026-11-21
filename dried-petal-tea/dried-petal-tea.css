@@ -1167,6 +1167,286 @@ body .mes .mes_text code:not(pre code) {
   --mr-msg-code-border: rgba(224, 176, 184, 0.38);
 }
 
+/* ---- 套用主題時：花瓣從畫面中央爆開，再飄落淡出（只播一次） ---- */
+html:not(:has(#preloader, #loader))::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-image:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(340 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23D9B8B4'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(189 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23EEDDD9'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(38 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23B88E8A'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(318 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23E6C7C2'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(340 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23D9B8B4'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(23 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23EEDDD9'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(58 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23B88E8A'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(321 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23E6C7C2'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(22 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23D9B8B4'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(49 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23EEDDD9'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(294 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23B88E8A'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(122 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23E6C7C2'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>");
+  background-position:
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px);
+  background-size:
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px;
+  animation: dpt-petal-burst-a 2.8s 0.15s both;
+}
+@keyframes dpt-petal-burst-a {
+  0% { opacity: 1; background-position: calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px); background-size: 4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px; animation-timing-function: cubic-bezier(.15,.85,.3,1); }
+  28% { opacity: 1; background-position: calc(50% + 237px) calc(45% + -49px),calc(50% + 180px) calc(45% + 34px),calc(50% + 77px) calc(45% + 123px),calc(50% + -45px) calc(45% + 187px),calc(50% + -152px) calc(45% + 176px),calc(50% + -258px) calc(45% + 123px),calc(50% + -186px) calc(45% + -18px),calc(50% + -201px) calc(45% + -164px),calc(50% + -110px) calc(45% + -147px),calc(50% + -3px) calc(45% + -180px),calc(50% + 125px) calc(45% + -239px),calc(50% + 181px) calc(45% + -133px); background-size: 21px 21px,29px 29px,28px 28px,20px 20px,20px 20px,20px 20px,22px 22px,25px 25px,22px 22px,25px 25px,27px 27px,28px 28px; animation-timing-function: cubic-bezier(.45,0,.75,.6); }
+  70% { opacity: .9; }
+  100% { opacity: 0; visibility: hidden; background-position: calc(50% + 235px) calc(45% + 259px),calc(50% + 189px) calc(45% + 261px),calc(50% + 89px) calc(45% + 428px),calc(50% + -39px) calc(45% + 452px),calc(50% + -145px) calc(45% + 441px),calc(50% + -269px) calc(45% + 344px),calc(50% + -259px) calc(45% + 203px),calc(50% + -172px) calc(45% + 111px),calc(50% + -144px) calc(45% + 123px),calc(50% + -9px) calc(45% + 110px),calc(50% + 155px) calc(45% + 37px),calc(50% + 193px) calc(45% + 187px); background-size: 21px 21px,29px 29px,28px 28px,20px 20px,20px 20px,20px 20px,22px 22px,25px 25px,22px 22px,25px 25px,27px 27px,28px 28px; }
+}
+html:not(:has(#preloader, #loader))::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-image:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(291 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23D9B8B4'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(307 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23EEDDD9'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(69 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23B88E8A'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(78 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23E6C7C2'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(140 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23D9B8B4'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(174 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23EEDDD9'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(80 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23B88E8A'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(21 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23E6C7C2'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(175 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23D9B8B4'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(212 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23EEDDD9'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(196 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23B88E8A'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><g transform='rotate(317 14 14)'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z' fill='%23E6C7C2'/><path d='M14 7Q13.4 15 14 23' stroke='%23FBF8F5' stroke-width='0.9' fill='none' opacity='0.7'/></g></svg>");
+  background-position:
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px),
+    calc(50% + 0px) calc(45% + 0px);
+  background-size:
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px,
+    4px 4px;
+  animation: dpt-petal-burst-b 2.8s 0.3s both;
+}
+@keyframes dpt-petal-burst-b {
+  0% { opacity: 1; background-position: calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px),calc(50% + 0px) calc(45% + 0px); background-size: 4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px,4px 4px; animation-timing-function: cubic-bezier(.15,.85,.3,1); }
+  28% { opacity: 1; background-position: calc(50% + 165px) calc(45% + -10px),calc(50% + 89px) calc(45% + 19px),calc(50% + 83px) calc(45% + 110px),calc(50% + -34px) calc(45% + 77px),calc(50% + -78px) calc(45% + 25px),calc(50% + -97px) calc(45% + -5px),calc(50% + -162px) calc(45% + -56px),calc(50% + -88px) calc(45% + -112px),calc(50% + -58px) calc(45% + -212px),calc(50% + 47px) calc(45% + -173px),calc(50% + 118px) calc(45% + -155px),calc(50% + 208px) calc(45% + -66px); background-size: 24px 24px,27px 27px,21px 21px,19px 19px,28px 28px,27px 27px,18px 18px,27px 27px,25px 25px,24px 24px,26px 26px,22px 22px; animation-timing-function: cubic-bezier(.45,0,.75,.6); }
+  70% { opacity: .9; }
+  100% { opacity: 0; visibility: hidden; background-position: calc(50% + 133px) calc(45% + 299px),calc(50% + 58px) calc(45% + 351px),calc(50% + 133px) calc(45% + 429px),calc(50% + -69px) calc(45% + 305px),calc(50% + -57px) calc(45% + 275px),calc(50% + -157px) calc(45% + 240px),calc(50% + -214px) calc(45% + 258px),calc(50% + -132px) calc(45% + 166px),calc(50% + -45px) calc(45% + 35px),calc(50% + 93px) calc(45% + 93px),calc(50% + 99px) calc(45% + 114px),calc(50% + 237px) calc(45% + 215px); background-size: 24px 24px,27px 27px,21px 21px,19px 19px,28px 28px,27px 27px,18px 18px,27px 27px,25px 25px,24px 24px,26px 26px,22px 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html::before, html::after { content: none; animation: none; }
+}
+
+/* ---- 花瓣罐：收藏喜歡的句子（需要 ST-ThemeScript） ---- */
+:root {
+  --dpt-petal-mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z'/></svg>");
+  --dpt-jar-mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M8 3.2h8M8.6 3.2v2.6C6.3 6.9 5 8.9 5 11.6v6.2C5 19.8 6.4 21 8.4 21h7.2c2 0 3.4-1.2 3.4-3.2v-6.2c0-2.7-1.3-4.7-3.6-5.8V3.2'/><path d='M9.4 14.8c.9-1.8 2.6-1.9 3.1-.4.4 1.3-.9 2.6-3.1.4Z' fill='black'/><path d='M14.2 12.2c1.6.3 2 1.8.9 2.6-.9.7-2.1-.1-.9-2.6Z' fill='black'/><path d='M12.6 17.6c1.3-.6 2.3.3 1.8 1.2-.5.8-1.7.6-1.8-1.2Z' fill='black'/></svg>");
+}
+body .mes .mes_buttons .dpt-petal-btn::before {
+  content: "✿";
+}
+body .mes .mes_buttons .dpt-petal-btn:hover { color: var(--mr-pink-deep) !important; }
+body .mes .mes_buttons .dpt-petal-btn.dpt-petal-saved { color: var(--mr-pink-deep) !important; opacity: 1 !important; }
+
+/* 頂欄的罐子按鈕：放在白天／黑夜開關左邊 */
+body #dpt-jar-btn {
+  position: absolute !important;
+  top: 50%;
+  right: 76px;
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  color: #6F8497;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 3200;
+}
+body #dpt-jar-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: currentColor;
+  -webkit-mask: var(--dpt-jar-mask) center / contain no-repeat;
+  mask: var(--dpt-jar-mask) center / contain no-repeat;
+  transition: transform 0.2s ease;
+}
+body #dpt-jar-btn:hover { color: var(--mr-pink-deep); }
+body #dpt-jar-btn:hover::before { transform: rotate(-8deg); }
+body #dpt-jar-btn:focus-visible { outline: 1.5px dashed var(--mr-pink-deep) !important; outline-offset: 2px; }
+:root[data-dpt-mode="night"] body #dpt-jar-btn { color: #A9BCD0; }
+@media (max-width: 1000px) {
+  body #dpt-jar-btn {
+    position: relative !important;
+    top: auto;
+    right: auto;
+    flex: 0 0 22px;
+    align-self: center;
+    width: 22px !important;
+    height: 22px !important;
+    transform: none;
+  }
+}
+
+/* 罐子打開後的面板 */
+#dpt-jar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(90, 85, 96, 0.28);
+  animation: dpt-jar-fade 0.2s ease both;
+}
+#dpt-jar-panel {
+  position: relative;
+  width: min(520px, 100%);
+  max-height: min(78dvh, 640px);
+  display: flex;
+  flex-direction: column;
+  background: var(--mr-paper);
+  color: var(--mr-ink);
+  border: 1px solid var(--mr-pink);
+  border-radius: 18px;
+  box-shadow: 0 10px 34px rgba(90, 70, 80, 0.22);
+  font-family: var(--mainFontFamily);
+  animation: dpt-jar-pop 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+#dpt-jar-panel header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 16px 20px 10px;
+  border-bottom: 1px dashed var(--mr-pink);
+}
+#dpt-jar-panel h3 { margin: 0; font-size: 1.25em; color: var(--mr-pink-deep); font-weight: normal; }
+#dpt-jar-panel .dpt-jar-count { color: var(--mr-ink-soft); font-size: 0.9em; }
+#dpt-jar-panel .dpt-jar-close {
+  margin-left: auto;
+  border: none;
+  background: none;
+  color: var(--mr-ink-soft);
+  font-size: 1.4em;
+  line-height: 1;
+  cursor: pointer;
+}
+#dpt-jar-panel .dpt-jar-close:hover { color: var(--mr-pink-deep); }
+#dpt-jar-panel .dpt-jar-daily {
+  margin: 14px 20px 6px;
+  padding: 14px 16px 10px;
+  border-radius: 12px;
+  background: var(--mr-pink-soft);
+}
+#dpt-jar-panel .dpt-jar-daily-label { font-size: 0.85em; color: var(--mr-pink-deep); }
+#dpt-jar-panel .dpt-jar-daily-text { margin: 6px 0 4px; white-space: pre-wrap; line-height: 1.6; }
+#dpt-jar-panel .dpt-jar-daily-row { display: flex; align-items: center; gap: 8px; }
+#dpt-jar-panel .dpt-jar-reroll {
+  margin-left: auto;
+  padding: 2px 10px;
+  border: 1px solid var(--mr-pink);
+  border-radius: 999px;
+  background: var(--mr-paper);
+  color: var(--mr-pink-deep);
+  font: inherit;
+  font-size: 0.85em;
+  cursor: pointer;
+}
+#dpt-jar-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 6px 20px 18px;
+  overflow-y: auto;
+}
+#dpt-jar-panel li {
+  position: relative;
+  padding: 12px 28px 10px 0;
+  border-bottom: 1px solid var(--mr-blue-soft);
+}
+#dpt-jar-panel li:last-child { border-bottom: none; }
+#dpt-jar-panel .dpt-jar-text { white-space: pre-wrap; line-height: 1.6; }
+#dpt-jar-panel .dpt-jar-meta { margin-top: 4px; font-size: 0.82em; color: var(--mr-ink-soft); }
+#dpt-jar-panel .dpt-jar-del {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  border: none;
+  background: none;
+  color: var(--mr-ink-soft);
+  font-size: 1.1em;
+  cursor: pointer;
+  opacity: 0.55;
+}
+#dpt-jar-panel .dpt-jar-del:hover { opacity: 1; color: var(--mr-pink-deep); }
+#dpt-jar-panel .dpt-jar-empty { padding: 28px 20px 32px; text-align: center; color: var(--mr-ink-soft); line-height: 1.8; }
+@keyframes dpt-jar-fade { from { opacity: 0; } }
+@keyframes dpt-jar-pop { from { opacity: 0; transform: translateY(10px) scale(0.97); } }
+
+/* 收進罐子時飄出來的小花瓣 */
+.dpt-flying-petal {
+  position: fixed;
+  z-index: 10060;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  -webkit-mask: var(--dpt-petal-mask) center / contain no-repeat;
+  mask: var(--dpt-petal-mask) center / contain no-repeat;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #dpt-jar-overlay, #dpt-jar-panel { animation: none; }
+}
+
 <script>
 const STORAGE_KEY = 'dried-petal-tea-mode';
 const root = document.documentElement;
@@ -1212,6 +1492,244 @@ button.addEventListener('click', onClick);
 window.addEventListener('storage', onStorage);
 host?.appendChild(button);
 
+// ===== 花瓣罐：收藏喜歡的句子 =====
+// 存在酒館的擴充設定裡（跟著伺服器走），手機和電腦看到的是同一個罐子
+const dptCtx = SillyTavern.getContext();
+const JAR_KEY = 'driedPetalTeaJar';
+const PETAL_COLORS = ['#D9B8B4', '#E6C7C2', '#B88E8A', '#EEDDD9'];
+const chatEl = document.getElementById('chat');
+let pendingSelection = '';
+
+function jarList() {
+    const settings = dptCtx.extensionSettings;
+    if (!Array.isArray(settings[JAR_KEY])) settings[JAR_KEY] = [];
+    return settings[JAR_KEY];
+}
+
+function saveJar() {
+    dptCtx.saveSettingsDebounced();
+}
+
+function sprinkle(x, y, count = 7, spread = 60, rise = 50) {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    for (let i = 0; i < count; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'dpt-flying-petal';
+        petal.style.left = `${x - 6}px`;
+        petal.style.top = `${y - 6}px`;
+        petal.style.background = PETAL_COLORS[i % PETAL_COLORS.length];
+        document.body.appendChild(petal);
+        const angle = (-90 + (Math.random() - 0.5) * 150) * Math.PI / 180;
+        const dist = spread * (0.5 + Math.random() * 0.6);
+        const dx = Math.cos(angle) * dist;
+        const dy = Math.sin(angle) * dist - rise * Math.random();
+        const spin = (Math.random() - 0.5) * 540;
+        petal.animate([
+            { transform: 'translate(0, 0) rotate(0deg) scale(0.4)', opacity: 1 },
+            { transform: `translate(${dx}px, ${dy}px) rotate(${spin / 2}deg) scale(1)`, opacity: 1, offset: 0.35 },
+            { transform: `translate(${dx * 1.3}px, ${dy + 70}px) rotate(${spin}deg) scale(0.9)`, opacity: 0 },
+        ], { duration: 1300 + Math.random() * 500, easing: 'cubic-bezier(.2,.7,.4,1)' }).onfinish = () => petal.remove();
+    }
+}
+
+function addPetalButton(mes) {
+    const buttons = mes.querySelector('.mes_buttons');
+    if (!buttons || buttons.querySelector('.dpt-petal-btn')) return;
+    const btn = document.createElement('div');
+    btn.className = 'mes_button dpt-petal-btn interactable';
+    btn.title = '收進花瓣罐（可以先反白想收的那一句）';
+    btn.tabIndex = 0;
+    buttons.insertBefore(btn, buttons.querySelector('.mes_bookmark') || buttons.querySelector('.mes_edit'));
+}
+
+function addAllPetalButtons() {
+    chatEl?.querySelectorAll('.mes').forEach(addPetalButton);
+}
+
+function selectionInside(mes) {
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed) return '';
+    const text = mes.querySelector('.mes_text');
+    if (!text || !text.contains(sel.anchorNode) || !text.contains(sel.focusNode)) return '';
+    return sel.toString().trim();
+}
+
+function onChatPointerDown(event) {
+    const btn = event.target.closest?.('.dpt-petal-btn');
+    if (btn) pendingSelection = selectionInside(btn.closest('.mes'));
+}
+
+function onChatClick(event) {
+    const btn = event.target.closest?.('.dpt-petal-btn');
+    if (!btn) return;
+    event.stopPropagation();
+    const mes = btn.closest('.mes');
+    const text = (pendingSelection || selectionInside(mes) || mes.querySelector('.mes_text')?.innerText || '').trim().slice(0, 1500);
+    pendingSelection = '';
+    if (!text) return;
+    const jar = jarList();
+    if (jar.some(item => item.text === text)) {
+        toastr.info('這片花瓣已經在罐子裡了');
+        return;
+    }
+    jar.push({
+        id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+        text,
+        name: mes.querySelector('.name_text')?.textContent.trim() || '',
+        at: Date.now(),
+    });
+    saveJar();
+    window.getSelection()?.removeAllRanges();
+    btn.classList.add('dpt-petal-saved');
+    setTimeout(() => btn.classList.remove('dpt-petal-saved'), 1600);
+    const rect = btn.getBoundingClientRect();
+    sprinkle(rect.left + rect.width / 2, rect.top + rect.height / 2);
+    toastr.success(`收進花瓣罐了（共 ${jar.length} 片）`);
+}
+
+function onChatKeyDown(event) {
+    if ((event.key === 'Enter' || event.key === ' ') && event.target.classList?.contains('dpt-petal-btn')) {
+        event.preventDefault();
+        onChatClick(event);
+    }
+}
+
+const chatObserver = new MutationObserver(records => {
+    for (const record of records) {
+        for (const node of record.addedNodes) {
+            if (node.nodeType !== 1) continue;
+            if (node.classList.contains('mes')) addPetalButton(node);
+            else node.querySelectorAll?.('.mes').forEach(addPetalButton);
+        }
+    }
+});
+
+// --- 打開罐子的面板 ---
+let overlay = null;
+
+function formatDate(ms) {
+    const d = new Date(ms);
+    return `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`;
+}
+
+function dailyIndex(length) {
+    const d = new Date();
+    const seed = d.getFullYear() * 1000 + d.getMonth() * 40 + d.getDate();
+    return Math.floor(Math.abs(Math.sin(seed) * 10000)) % length;
+}
+
+function el(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+}
+
+function renderJar(pickIndex) {
+    const panel = overlay.querySelector('#dpt-jar-panel');
+    const jar = jarList();
+    panel.querySelector('.dpt-jar-count').textContent = `${jar.length} 片`;
+    const body = panel.querySelector('.dpt-jar-body');
+    body.replaceChildren();
+
+    if (!jar.length) {
+        body.append(el('div', 'dpt-jar-empty', '罐子還是空的。\n在訊息旁邊點 ✿，就能把喜歡的句子收進來；\n先反白一段字再點，就只收那一段。'));
+        body.firstChild.style.whiteSpace = 'pre-line';
+        return;
+    }
+
+    const index = pickIndex ?? dailyIndex(jar.length);
+    const pick = jar[index];
+    const daily = el('div', 'dpt-jar-daily');
+    daily.append(el('div', 'dpt-jar-daily-label', pickIndex === undefined ? '今日一句' : '抽到這一片'));
+    daily.append(el('div', 'dpt-jar-daily-text', pick.text));
+    const row = el('div', 'dpt-jar-daily-row');
+    row.append(el('span', 'dpt-jar-meta', `— ${pick.name || '某人'} · ${formatDate(pick.at)}`));
+    const reroll = el('button', 'dpt-jar-reroll', '再抽一片');
+    reroll.type = 'button';
+    reroll.addEventListener('click', () => {
+        let next = Math.floor(Math.random() * jar.length);
+        if (jar.length > 1 && next === index) next = (next + 1) % jar.length;
+        renderJar(next);
+    });
+    row.append(reroll);
+    daily.append(row);
+    body.append(daily);
+
+    const list = el('ul');
+    for (const item of [...jar].reverse()) {
+        const li = el('li');
+        li.append(el('div', 'dpt-jar-text', item.text));
+        li.append(el('div', 'dpt-jar-meta', `— ${item.name || '某人'} · ${formatDate(item.at)}`));
+        const del = el('button', 'dpt-jar-del', '×');
+        del.type = 'button';
+        del.title = '從罐子拿出來';
+        del.addEventListener('click', () => {
+            const i = jar.findIndex(x => x.id === item.id);
+            if (i >= 0) jar.splice(i, 1);
+            saveJar();
+            renderJar();
+        });
+        li.append(del);
+        list.append(li);
+    }
+    body.append(list);
+}
+
+function closeJar() {
+    overlay?.remove();
+    overlay = null;
+    document.removeEventListener('keydown', onJarKey, true);
+}
+
+function onJarKey(event) {
+    if (event.key === 'Escape') {
+        event.stopPropagation();
+        closeJar();
+    }
+}
+
+function openJar() {
+    if (overlay) return closeJar();
+    overlay = el('div');
+    overlay.id = 'dpt-jar-overlay';
+    const panel = el('div');
+    panel.id = 'dpt-jar-panel';
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-label', '花瓣罐');
+    const header = el('header');
+    header.append(el('h3', '', '花瓣罐'), el('span', 'dpt-jar-count'));
+    const close = el('button', 'dpt-jar-close', '×');
+    close.type = 'button';
+    close.title = '關上罐子';
+    close.addEventListener('click', closeJar);
+    header.append(close);
+    panel.append(header, el('div', 'dpt-jar-body'));
+    panel.querySelector('.dpt-jar-body').style.cssText = 'display:flex;flex-direction:column;min-height:0;overflow-y:auto;';
+    overlay.append(panel);
+    overlay.addEventListener('click', event => { if (event.target === overlay) closeJar(); });
+    document.body.append(overlay);
+    document.addEventListener('keydown', onJarKey, true);
+    renderJar();
+    close.focus();
+}
+
+const jarButton = document.createElement('button');
+jarButton.type = 'button';
+jarButton.id = 'dpt-jar-btn';
+jarButton.title = '花瓣罐';
+jarButton.setAttribute('aria-label', '花瓣罐');
+jarButton.addEventListener('click', openJar);
+host?.insertBefore(jarButton, button);
+
+addAllPetalButtons();
+if (chatEl) {
+    chatObserver.observe(chatEl, { childList: true, subtree: true });
+    chatEl.addEventListener('pointerdown', onChatPointerDown, true);
+    chatEl.addEventListener('click', onChatClick, true);
+    chatEl.addEventListener('keydown', onChatKeyDown);
+}
+
 // 主題要的酒館設定：第一次套用時改成扁平聊天、展開訊息按鈕；原值記在 localStorage，拿掉主題時還原。
 const SETTINGS_KEY = 'dried-petal-tea-settings';
 const THEME_SETTINGS = { chat_display: 0, expand_message_actions: true };
@@ -1219,7 +1737,6 @@ const controls = {
     chat_display: { selector: '#chat_display', event: 'change' },
     expand_message_actions: { selector: '#expandMessageActions', event: 'input' },
 };
-const { eventSource, eventTypes } = SillyTavern.getContext();
 
 // 透過酒館原生的設定控制項觸發，讓酒館自己套用畫面和存檔。
 function setSettings(values) {
@@ -1235,20 +1752,31 @@ function setSettings(values) {
 // 腳本可能在載入畫面時就執行，要等酒館讀完使用者設定（APP_READY）才改，否則會被讀進來的設定蓋掉。
 function applyThemeSettings() {
     if (localStorage.getItem(SETTINGS_KEY)) return;
-    const current = SillyTavern.getContext().powerUserSettings;
+    const current = dptCtx.powerUserSettings;
     const original = Object.fromEntries(Object.keys(THEME_SETTINGS).map(key => [key, current[key]]));
     localStorage.setItem(SETTINGS_KEY, JSON.stringify(original));
     setSettings(THEME_SETTINGS);
 }
 
-eventSource.on(eventTypes.APP_READY, applyThemeSettings);
+dptCtx.eventSource.on(dptCtx.eventTypes.APP_READY, applyThemeSettings);
+
+function cleanupJar() {
+    closeJar();
+    chatObserver.disconnect();
+    chatEl?.removeEventListener('pointerdown', onChatPointerDown, true);
+    chatEl?.removeEventListener('click', onChatClick, true);
+    chatEl?.removeEventListener('keydown', onChatKeyDown);
+    document.querySelectorAll('.dpt-petal-btn, .dpt-flying-petal').forEach(node => node.remove());
+    jarButton.remove();
+}
 
 export function cleanup() {
+    cleanupJar();
     button.removeEventListener('click', onClick);
     window.removeEventListener('storage', onStorage);
     button.remove();
     delete root.dataset.dptMode;
-    eventSource.removeListener(eventTypes.APP_READY, applyThemeSettings);
+    dptCtx.eventSource.removeListener(dptCtx.eventTypes.APP_READY, applyThemeSettings);
     const original = localStorage.getItem(SETTINGS_KEY);
     if (original) {
         localStorage.removeItem(SETTINGS_KEY);
