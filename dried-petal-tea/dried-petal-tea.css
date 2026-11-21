@@ -707,6 +707,8 @@ body #sheld #extensionTopBar {
   width: auto !important;
   box-sizing: border-box !important;
   border-radius: 18px 18px 0 0 !important;
+  border: none !important;
+  border-bottom: 1px solid var(--SmartThemeBorderColor) !important;
   background-color: var(--SmartThemeChatTintColor) !important;
   -webkit-backdrop-filter: blur(10px) !important;
   backdrop-filter: blur(10px) !important;
