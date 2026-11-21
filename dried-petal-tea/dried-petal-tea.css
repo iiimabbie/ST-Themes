@@ -893,42 +893,42 @@ body #chat .welcomePanel .recentChatsTitle {
 }
 :where(html[data-dpt-mode="night"]) body #chat .welcomePanel .recentChatsTitle { background: rgba(38, 45, 58, 0.85); color: #E8B9C1; }
 
-/* 首頁上方：藤蔓花框裡的一張照片，下面一句話；寬度跟著畫面縮，手機也放得下 */
+/* 首頁上方：藤蔓花框裡的一張照片，那句話壓在照片底部的半透明紙白上；寬度跟著畫面縮，手機也放得下 */
 body #chat .welcomePanel::before {
-  content: "";
-  order: -2;
-  display: block;
+  content: "« Sans toi, les émotions d'aujourd'hui ne seraient que la peau morte des émotions d'autrefois. »";
+  order: -1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   align-self: center;
   box-sizing: border-box;
   width: min(460px, calc(100% - 44px));
   aspect-ratio: 3 / 2;
-  margin: 22px 0 14px;
+  margin: 22px 0 18px;
+  padding: 0 26px 16px;
   /* 藤蔓線在框圖的 12/48 處：外推 12px 讓藤蔓剛好壓在照片邊上，圓角對齊藤蔓轉角 */
   border: 1px solid transparent;
   border-radius: 34px;
-  background: url("https://i.pinimg.com/736x/0c/4b/f9/0c4bf9163a8e43b1a20b0bc653583dc5.jpg") center / cover no-repeat border-box;
+  background:
+    linear-gradient(to top, rgba(251, 248, 245, 0.78) 0, rgba(251, 248, 245, 0.55) 24%, rgba(251, 248, 245, 0) 46%) border-box,
+    url("https://i.pinimg.com/736x/0c/4b/f9/0c4bf9163a8e43b1a20b0bc653583dc5.jpg") center / cover no-repeat border-box;
   border-image: var(--mr-vine-frame) 48 / 48px / 12px round stretch;
   filter: drop-shadow(0 4px 10px rgba(90, 85, 96, 0.12));
-}
-body #chat .welcomePanel::after {
-  content: "« Sans toi, les émotions d'aujourd'hui ne seraient que la peau morte des émotions d'autrefois. »";
-  order: -1;
-  align-self: center;
-  max-width: min(520px, calc(100% - 24px));
-  margin-bottom: 10px;
-  padding: 4px 14px;
-  border-radius: 12px;
-  background: rgba(251, 248, 245, 0.7);
   color: var(--mr-blue-deep);
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
-  font-size: clamp(0.85rem, 2.6vw, 1rem);
-  line-height: 1.6;
+  font-size: clamp(0.78rem, 2.4vw, 0.95rem);
+  line-height: 1.5;
   text-align: center;
 }
-:where(html[data-dpt-mode="night"]) body #chat .welcomePanel::after { background: rgba(38, 45, 58, 0.7); color: #C4D3E2; }
+:where(html[data-dpt-mode="night"]) body #chat .welcomePanel::before {
+  background:
+    linear-gradient(to top, rgba(38, 45, 58, 0.8) 0, rgba(38, 45, 58, 0.55) 24%, rgba(38, 45, 58, 0) 46%) border-box,
+    url("https://i.pinimg.com/736x/0c/4b/f9/0c4bf9163a8e43b1a20b0bc653583dc5.jpg") center / cover no-repeat border-box;
+  color: #C4D3E2;
+}
 @media (max-width: 600px) {
-  body #chat .welcomePanel::before { width: calc(100% - 30px); border-image-width: 36px; border-image-outset: 9px; border-radius: 25px; margin: 16px 0 10px; }
+  body #chat .welcomePanel::before { width: calc(100% - 30px); padding: 0 18px 10px; border-image-width: 36px; border-image-outset: 9px; border-radius: 25px; margin: 16px 0 12px; font-size: 0.74rem; }
 }
 
 /* 聊天列表：一張紙卡，每個聊天一列，用虛線隔開 */
