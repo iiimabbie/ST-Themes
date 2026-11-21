@@ -1427,7 +1427,7 @@ html:not(:has(#preloader, #loader))::after {
 
 /* ---- 花瓣罐：收藏喜歡的句子（需要 ST-ThemeScript） ---- */
 :root {
-  --dpt-flower-mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(12 12)'><path id='p' d='M0 -1.2C-2.6 -3.4 -3 -8.6 0 -10.6C3 -8.6 2.6 -3.4 0 -1.2Z'/><use href='%23p' transform='rotate(72)'/><use href='%23p' transform='rotate(144)'/><use href='%23p' transform='rotate(216)'/><use href='%23p' transform='rotate(288)'/><circle r='2.2'/></g></svg>");
+  --dpt-flower-mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(12 12)'><path id='p' d='M0 -1C-5 -2.6 -5.2 -10.4 0 -11.2C5.2 -10.4 5 -2.6 0 -1Z'/><use href='%23p' transform='rotate(72)'/><use href='%23p' transform='rotate(144)'/><use href='%23p' transform='rotate(216)'/><use href='%23p' transform='rotate(288)'/><circle r='2.4'/></g></svg>");
   --dpt-petal-mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><path d='M14 4.5C16 1.8 19.5 2.6 20.6 7C22.2 13.5 18.6 20.5 14 26C9.4 20.5 5.8 13.5 7.4 7C8.5 2.6 12 1.8 14 4.5Z'/></svg>");
   --dpt-jar-mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'><path d='M8 3.2h8M8.6 3.2v2.6C6.3 6.9 5 8.9 5 11.6v6.2C5 19.8 6.4 21 8.4 21h7.2c2 0 3.4-1.2 3.4-3.2v-6.2c0-2.7-1.3-4.7-3.6-5.8V3.2'/><path d='M9.4 14.8c.9-1.8 2.6-1.9 3.1-.4.4 1.3-.9 2.6-3.1.4Z' fill='black'/><path d='M14.2 12.2c1.6.3 2 1.8.9 2.6-.9.7-2.1-.1-.9-2.6Z' fill='black'/><path d='M12.6 17.6c1.3-.6 2.3.3 1.8 1.2-.5.8-1.7.6-1.8-1.2Z' fill='black'/></svg>");
 }
