@@ -1434,15 +1434,19 @@ body #dpt-jar-btn:hover::before { transform: rotate(-8deg); }
 }
 
 /* 罐子打開後的面板 */
-/* 酒館給 html 加了 translateZ(0)，fixed 會改成相對 html 定位；手機版 html 高度會縮到幾乎 0，
-   只靠 inset: 0 遮罩會被壓成一條、面板跑到畫面頂端被切掉，所以寬高直接用視窗大小 */
+/* 罐子面板用 <dialog> 的 showModal() 開在最上層（top layer）：酒館給 html 加了 translateZ(0)，
+   一般 fixed 元素會改成相對 html 定位，手機上會跑到畫面頂端被切掉；top layer 不受這個影響，永遠對齊視窗 */
 #dpt-jar-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
   height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
   box-sizing: border-box;
+  color: inherit;
   z-index: 10050;
   display: flex;
   align-items: center;
@@ -1451,6 +1455,8 @@ body #dpt-jar-btn:hover::before { transform: rotate(-8deg); }
   background: rgba(90, 85, 96, 0.28);
   animation: dpt-jar-fade 0.2s ease both;
 }
+#dpt-jar-overlay:not([open]) { display: none; }
+#dpt-jar-overlay::backdrop { background: transparent; }
 #dpt-jar-panel {
   position: relative;
   width: min(520px, 100%);
@@ -1779,6 +1785,7 @@ function renderJar(pickIndex) {
 }
 
 function closeJar() {
+    if (overlay?.open) overlay.close();
     overlay?.remove();
     overlay = null;
     document.removeEventListener('keydown', onJarKey, true);
@@ -1793,8 +1800,10 @@ function onJarKey(event) {
 
 function openJar() {
     if (overlay) return closeJar();
-    overlay = el('div');
+    overlay = el('dialog');
     overlay.id = 'dpt-jar-overlay';
+    // 按 Esc 時 dialog 會自己關掉，攔下來走 closeJar 才會一起移除與解除監聽
+    overlay.addEventListener('cancel', event => { event.preventDefault(); closeJar(); });
     const panel = el('div');
     panel.id = 'dpt-jar-panel';
     panel.setAttribute('role', 'dialog');
@@ -1811,6 +1820,7 @@ function openJar() {
     overlay.append(panel);
     overlay.addEventListener('click', event => { if (event.target === overlay) closeJar(); });
     document.body.append(overlay);
+    overlay.showModal();
     document.addEventListener('keydown', onJarKey, true);
     renderJar();
     close.focus();
