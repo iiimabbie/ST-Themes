@@ -950,6 +950,21 @@ body #chat .welcomeRecent .recentChat .chatMessageContainer .chatMessage {
   line-clamp: 1;
   color: var(--mr-ink-soft);
 }
+/* 釘選、改名、刪除：縮成小圓鈕，疊在日期的位置，出現時不會把這一列撐高 */
+body #chat .welcomeRecent .recentChat .chatActions {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  gap: 4px;
+}
+body #chat .welcomeRecent .recentChat .chatActions button {
+  width: 22px;
+  height: 22px;
+  min-width: 0;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  font-size: 0.7em;
+}
 /* 釘選、改名、刪除平常藏起來，滑鼠移上去才出現（手機沒有滑鼠，一直顯示） */
 @media (hover: hover) {
   body #chat .welcomeRecent .recentChat .chatActions { display: none; }
