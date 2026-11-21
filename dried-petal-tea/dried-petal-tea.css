@@ -30,7 +30,7 @@
   --SmartThemeUnderlineColor:       var(--mr-pink-deep) !important;
   --SmartThemeQuoteColor:           #A57F7B !important;
   --SmartThemeBlurTintColor:        rgba(245, 241, 236, 0.92) !important;
-  --SmartThemeChatTintColor:        rgba(245, 241, 236, 0.88) !important;
+  --SmartThemeChatTintColor:        rgba(245, 241, 236, 0.5) !important;
   --SmartThemeUserMesBlurTintColor: rgba(238, 221, 217, 0.85) !important;
   --SmartThemeBotMesBlurTintColor:  rgba(220, 228, 234, 0.80) !important;
   --SmartThemeShadowColor:          rgba(120, 105, 110, 0.12) !important;
@@ -684,6 +684,23 @@ body #chat {
   border-bottom-left-radius: 26px !important;
   border-bottom-right-radius: 26px !important;
 }
+/* 聊天欄底色半透明加模糊，不靠 Moonlit 也看得到背景圖 */
+body #chat {
+  background-color: var(--SmartThemeChatTintColor) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+}
+/* Top Info Bar（聊天上方那條）跟聊天欄同寬，兩角不要凸出去 */
+body #sheld #extensionTopBar {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  width: auto !important;
+  box-sizing: border-box !important;
+  border-radius: 18px 18px 0 0 !important;
+  background-color: var(--SmartThemeChatTintColor) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+}
 /* 捲軸底部讓出圓角的高度，不然會直直超出圓角 */
 body #chat::-webkit-scrollbar-track {
   margin-bottom: 22px;
@@ -1050,7 +1067,7 @@ body #chat .mes[is_user="true"] .mes_block {
   --mr-ink-soft: #9AA3B2;
   --SmartThemeQuoteColor: #D8A9B0 !important;
   --SmartThemeBlurTintColor: rgba(30, 36, 48, 0.92) !important;
-  --SmartThemeChatTintColor: rgba(30, 36, 48, 0.88) !important;
+  --SmartThemeChatTintColor: rgba(30, 36, 48, 0.55) !important;
   --SmartThemeUserMesBlurTintColor: rgba(67, 52, 61, 0.90) !important;
   --SmartThemeBotMesBlurTintColor: rgba(43, 54, 72, 0.85) !important;
   --SmartThemeShadowColor: rgba(0, 0, 0, 0.36) !important;
