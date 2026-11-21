@@ -675,6 +675,11 @@ body :is(.standoutHeader, #user-settings-block h4, #extensions_settings .inline-
   padding-top: 2px;
   padding-bottom: 2px;
 }
+/* 有些標題同時是 range-block-title（像進階格式化的「自訂停止字串」），酒館把它的上外距設成 0，
+   會比同一排其他標題高 5px；補回 5px 跟其他標題對齊 */
+body .standoutHeader.range-block-title {
+  margin-top: 5px;
+}
 /* 多選下拉（像世界書的「啟用的世界書」）裡打字用的小輸入框，原本是一塊白底加淺框，
    疊在外框裡像多一個白框；改透明無框，只留外面那一圈 */
 body .select2-container .select2-search--inline .select2-search__field {
