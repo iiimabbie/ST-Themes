@@ -1046,6 +1046,10 @@ body #chat .welcomeRecent .recentChat .chatActions button i {
   text-align: center;
 }
 /* 釘選、改名、刪除平常藏起來，滑鼠移上去才出現（手機沒有滑鼠，一直顯示） */
+/* 手機沒有滑鼠移入，按鈕一直顯示，日期就不顯示，免得疊在按鈕底下 */
+@media (hover: none) {
+  body #chat .welcomeRecent .recentChat .chatDate { display: none; }
+}
 @media (hover: hover) {
   body #chat .welcomeRecent .recentChat .chatActions { display: none; }
   body #chat .welcomeRecent .recentChat:hover .chatActions { display: flex; }
