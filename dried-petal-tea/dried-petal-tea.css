@@ -664,6 +664,12 @@ body #user-settings-block .inline-drawer-header {
   background-color: transparent !important;
   border: 1px solid rgba(126, 147, 165, 0.22) !important;
 }
+/* 進階格式化：用 Chat Completion API 時，酒館標了 data-cc-null 的設定（反灰、沒作用）直接不顯示，
+   上面的提示條也一起藏；判斷條件跟酒館反灰的規則一樣，用 Text Completion 時照常顯示。
+   右上角的進階匯入／匯出也有這個標記，但還用得到，留著 */
+#top-settings-holder:has(#main_api option[value="openai"]:checked) :is(#advanced-formatting-cc-notice, #AdvancedFormatting [data-cc-null]:not(:has(#af_master_import))) {
+  display: none !important;
+}
 /* 擴充頁分隔線下面那段「（已淘汰）擴充功能 API」不顯示 */
 body #rm_extensions_block .extensions_block > hr,
 body #rm_extensions_block .extensions_block > div:has(#extensions_status, #extensions_url) {
