@@ -1512,6 +1512,8 @@ html:not(:has(#preloader, #loader))::after {
 }
 /* 小花用遮罩畫成 1em 正方形，不靠系統字型的 ✿（各字型基線不同，會比旁邊的 Font Awesome 圖示高） */
 body .mes .mes_buttons .dpt-petal-btn {
+  /* 酒館給沒帶 Font Awesome class 的按鈕加了一圈紙白光暈，遮罩小花會被糊開；其他圖示都沒有 */
+  filter: none !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
