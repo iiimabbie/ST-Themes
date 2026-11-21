@@ -685,6 +685,14 @@ body .standoutHeader.range-block-title {
 body #rm_api_block select:not(.text_pole) {
   margin-top: 5px;
 }
+/* 提示詞管理標題列（左邊「提示」、右邊 token 數）是酒館自己的字，酒館給 50% 白，淺色底上幾乎看不到，
+   右邊的 token 數還加了黑色光暈；改成次要文字色、拿掉光暈。中間的摺疊按鈕是提示詞摺疊插件的，不在這裡管 */
+body #completion_prompt_manager .completion_prompt_manager_header {
+  color: var(--mr-ink-soft);
+}
+body #completion_prompt_manager .completion_prompt_manager_header_advanced span {
+  filter: none;
+}
 /* select2 下拉清單不要陰影 */
 body .select2-dropdown {
   box-shadow: none !important;
