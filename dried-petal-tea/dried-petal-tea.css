@@ -288,8 +288,10 @@ textarea:focus, input:focus, select:focus, .text_pole:focus {
   border-color: var(--mr-pink) !important;
 }
 #send_but, #mes_continue, #mes_stop { color: var(--mr-pink-deep) !important; }
-/* 圖示光暈：SillyTavern 預設給圖示加黑色 drop-shadow（深色主題用），淺色底上會變成髒髒的光暈 */
-.fa-solid, .fa-regular, .fa-brands {
+/* 圖示光暈：SillyTavern 預設給圖示和訊息按鈕加 drop-shadow（深色主題用），淺色底上會變成髒髒的光暈；
+   訊息按鈕整類一起清，主題或擴充自己加、沒帶 Font Awesome class 的按鈕（像花瓣罐）也不會漏掉 */
+.fa-solid, .fa-regular, .fa-brands,
+.mes_button, .extraMesButtons > div {
   text-shadow: none !important;
   filter: none !important;
 }
@@ -1520,8 +1522,6 @@ html:not(:has(#preloader, #loader))::after {
 }
 /* 小花用遮罩畫成 1em 正方形，不靠系統字型的 ✿（各字型基線不同，會比旁邊的 Font Awesome 圖示高） */
 body .mes .mes_buttons .dpt-petal-btn {
-  /* 酒館給沒帶 Font Awesome class 的按鈕加了一圈紙白光暈，遮罩小花會被糊開；其他圖示都沒有 */
-  filter: none !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
