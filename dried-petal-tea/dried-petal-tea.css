@@ -1434,9 +1434,15 @@ body #dpt-jar-btn:hover::before { transform: rotate(-8deg); }
 }
 
 /* 罐子打開後的面板 */
+/* 酒館給 html 加了 translateZ(0)，fixed 會改成相對 html 定位；手機版 html 高度會縮到幾乎 0，
+   只靠 inset: 0 遮罩會被壓成一條、面板跑到畫面頂端被切掉，所以寬高直接用視窗大小 */
 #dpt-jar-overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  box-sizing: border-box;
   z-index: 10050;
   display: flex;
   align-items: center;
