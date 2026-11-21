@@ -856,7 +856,7 @@ body #chat .mes[is_user="true"] .mes_block {
 /* =========================================================
    黑夜模式（深夜藍莓）：只列出和白天不同的部分
    ========================================================= */
-:root:where([data-dpt-mode="night"], :not([data-dpt-mode]):has(.splash-screen)) {
+:root:where([data-dpt-mode="night"]) {
   --mr-cream: #1E2430;
   --mr-paper: #262D3A;
   --mr-pink: #C99AA3;
@@ -881,133 +881,133 @@ body #chat .mes[is_user="true"] .mes_block {
   --white50a: rgba(255, 255, 255, 0.11) !important;
   --grey30a: rgba(154, 163, 178, 0.25) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) body {
+:where(html[data-dpt-mode="night"]) body {
   background: linear-gradient(160deg, #2A2635 0%, var(--mr-cream) 45%, #1B2636 100%) fixed !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #sheld::before {
+:where(html[data-dpt-mode="night"]) #sheld::before {
   background-color: rgba(38, 45, 58, 0.35) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #top-bar,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #top-settings-holder {
+:where(html[data-dpt-mode="night"]) #top-bar,
+:where(html[data-dpt-mode="night"]) #top-settings-holder {
   background-color: rgba(38, 45, 58, 0.90) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.21) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) body #left-nav-panel,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) body #right-nav-panel {
+:where(html[data-dpt-mode="night"]) body #left-nav-panel,
+:where(html[data-dpt-mode="night"]) body #right-nav-panel {
   border: 1px solid rgba(227, 230, 236, 0.15) !important;
 }
-:root:where([data-dpt-mode="night"], :not([data-dpt-mode]):has(.splash-screen)) {
+:root:where([data-dpt-mode="night"]) {
   --Drawer-iconColor: #8FA4BA !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) body {
+:where(html[data-dpt-mode="night"]) body {
   --customThemeColor: #A9BCD0 !important;
   --customThemeColor2: #E0B0B8 !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #top-settings-holder .drawer-icon,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #top-settings-holder .drawer-icon.closedIcon {
+:where(html[data-dpt-mode="night"]) #top-settings-holder .drawer-icon,
+:where(html[data-dpt-mode="night"]) #top-settings-holder .drawer-icon.closedIcon {
   color: #8FA4BA !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #top-settings-holder .drawer-icon:hover {
+:where(html[data-dpt-mode="night"]) #top-settings-holder .drawer-icon:hover {
   color: #E8B9C1 !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #top-settings-holder .drawer-icon.openIcon {
+:where(html[data-dpt-mode="night"]) #top-settings-holder .drawer-icon.openIcon {
   color: #E8B9C1 !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .drawer-content,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #right-nav-panel,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #left-nav-panel,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .popup,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #floatingPrompt,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #cfgConfig {
+:where(html[data-dpt-mode="night"]) .drawer-content,
+:where(html[data-dpt-mode="night"]) #right-nav-panel,
+:where(html[data-dpt-mode="night"]) #left-nav-panel,
+:where(html[data-dpt-mode="night"]) .popup,
+:where(html[data-dpt-mode="night"]) #floatingPrompt,
+:where(html[data-dpt-mode="night"]) #cfgConfig {
   background-color: rgba(38, 45, 58, 0.96) !important;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.31) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #chat .mes .mes_block {
+:where(html[data-dpt-mode="night"]) #chat .mes .mes_block {
   border: 1px solid rgba(227, 230, 236, 0.06) !important;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .mes[is_user="true"] .mes_block {
+:where(html[data-dpt-mode="night"]) .mes[is_user="true"] .mes_block {
   background-color: rgba(67, 52, 61, 0.90) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .mes[is_user="false"] .mes_block {
+:where(html[data-dpt-mode="night"]) .mes[is_user="false"] .mes_block {
   background-color: rgba(43, 54, 72, 0.85) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .mes_text q,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .mes_text blockquote {
+:where(html[data-dpt-mode="night"]) .mes_text q,
+:where(html[data-dpt-mode="night"]) .mes_text blockquote {
   color: #D8A9B0 !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .mes_text blockquote {
+:where(html[data-dpt-mode="night"]) .mes_text blockquote {
   background: rgba(67, 52, 61, 0.40);
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .mes_text code,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .mes_text pre {
+:where(html[data-dpt-mode="night"]) .mes_text code,
+:where(html[data-dpt-mode="night"]) .mes_text pre {
   background: rgba(43, 54, 72, 0.65) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #send_form {
+:where(html[data-dpt-mode="night"]) #send_form {
   background-color: rgba(38, 45, 58, 0.95) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) textarea:focus,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) input:focus,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) select:focus,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .text_pole:focus {
+:where(html[data-dpt-mode="night"]) textarea:focus,
+:where(html[data-dpt-mode="night"]) input:focus,
+:where(html[data-dpt-mode="night"]) select:focus,
+:where(html[data-dpt-mode="night"]) .text_pole:focus {
   box-shadow: 0 0 0 2px rgba(224, 176, 184, 0.35) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .menu_button,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .welcomePanel .menu_button {
+:where(html[data-dpt-mode="night"]) .menu_button,
+:where(html[data-dpt-mode="night"]) .welcomePanel .menu_button {
   border: 1px solid rgba(143, 164, 186, 0.33) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .welcomePanel,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .welcomeRecent .recentChat,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .recentChat {
+:where(html[data-dpt-mode="night"]) .welcomePanel,
+:where(html[data-dpt-mode="night"]) .welcomeRecent .recentChat,
+:where(html[data-dpt-mode="night"]) .recentChat {
   background-color: rgba(38, 45, 58, 0.80) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .recentChat:hover {
+:where(html[data-dpt-mode="night"]) .recentChat:hover {
   background-color: rgba(67, 52, 61, 0.55) !important;
 }
-:root:where([data-dpt-mode="night"], :not([data-dpt-mode]):has(.splash-screen)) {
+:root:where([data-dpt-mode="night"]) {
   --mr-cb-off: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M3.3 3.7C7.1 2.8 12.9 3.3 16.6 2.9C17.2 7.1 16.7 12.4 17.2 16.8C12.7 17.3 7.4 16.7 3.0 17.1C2.6 12.7 3.2 7.8 3.3 3.7Z' fill='%23262D3A' stroke='%237D91A8' stroke-width='1.4' stroke-linejoin='round'/></svg>");
   --mr-cb-hover: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M3.3 3.7C7.1 2.8 12.9 3.3 16.6 2.9C17.2 7.1 16.7 12.4 17.2 16.8C12.7 17.3 7.4 16.7 3.0 17.1C2.6 12.7 3.2 7.8 3.3 3.7Z' fill='%23262D3A' stroke='%23E0B0B8' stroke-width='1.4' stroke-linejoin='round'/></svg>");
   --mr-cb-on: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M3.3 3.7C7.1 2.8 12.9 3.3 16.6 2.9C17.2 7.1 16.7 12.4 17.2 16.8C12.7 17.3 7.4 16.7 3.0 17.1C2.6 12.7 3.2 7.8 3.3 3.7Z' fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.4' stroke-linejoin='round'/><path d='M5.4 10.2C6.7 11.3 7.8 12.8 8.7 14.5C10.5 10.5 13.6 6.4 18.4 3.2' fill='none' stroke='%233A2F37' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/><path d='M5.4 10.2C6.7 11.3 7.8 12.8 8.7 14.5C10.5 10.5 13.6 6.4 18.4 3.2' fill='none' stroke='%23EBC3CA' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) body input[type="range"] {
+:where(html[data-dpt-mode="night"]) body input[type="range"] {
   box-shadow: inset 0 0 0 1px rgba(143, 164, 186, 0.28) !important;
 }
-:root:where([data-dpt-mode="night"], :not([data-dpt-mode]):has(.splash-screen)) {
+:root:where([data-dpt-mode="night"]) {
   --mr-flower: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><defs><path id='p' d='M12 12.2C8.7 10.1 8.4 4.6 11.7 2.5C15.3 3.9 15.4 9.6 12 12.2Z'/></defs><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.15' stroke-linejoin='round' stroke-linecap='round'><use href='%23p'/><use href='%23p' transform='rotate(70 12 12)'/><use href='%23p' transform='rotate(146 12 12)'/><use href='%23p' transform='rotate(217 12 12)'/><use href='%23p' transform='rotate(290 12 12)'/></g><path d='M10.2 11.4C10.6 9.9 13.1 9.6 13.8 11.1C14.5 12.7 12.9 14.3 11.4 13.8C10.5 13.5 10 12.4 10.2 11.4Z' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/><path d='M11.3 6.2C11.6 7.4 11.7 8.4 11.8 9.3M17.4 10.6C16.3 11 15.4 11.3 14.5 11.6' fill='none' stroke='%23E0B0B8' stroke-width='.7' stroke-linecap='round'/></svg>");
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) body input[type="range"]::-webkit-slider-thumb {
+:where(html[data-dpt-mode="night"]) body input[type="range"]::-webkit-slider-thumb {
   filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.65)) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) ::selection {
+:where(html[data-dpt-mode="night"]) ::selection {
   background: rgba(224, 176, 184, 0.50);
 }
-:root:where([data-dpt-mode="night"], :not([data-dpt-mode]):has(.splash-screen)) {
+:root:where([data-dpt-mode="night"]) {
   --mr-vine-frame: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 120' width='560' height='120'><path d='M48 12C95 8.6 135 15.5 190 12.5S285 8 340 11.5S462 15.6 512 12M48 108C92 111.4 138 104.8 188 107.7S292 111.6 345 108.6S468 104.6 512 108M12 48C10.6 56 13.4 64 12 72M548 48C549.4 56 546.6 64 548 72M12 48C11 31 27 13 48 12M512 12C533 13 549 30 548 48M548 72C549 91 534 107 512 108M48 108C27 107 11 91 12 72' fill='none' stroke='%238FA399' stroke-width='1.6' stroke-linecap='round'/><path transform='translate(88 10.1) rotate(-25) scale(1.0)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(88 10.1) rotate(-25) scale(1.0)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(106 11.6) rotate(35) scale(0.72)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(106 11.6) rotate(35) scale(0.72)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(236 9.6) rotate(205) scale(0.85)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(236 9.6) rotate(205) scale(0.85)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(355 12) rotate(-38) scale(1.05)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(355 12) rotate(-38) scale(1.05)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(437 13.6) rotate(150) scale(0.78)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(437 13.6) rotate(150) scale(0.78)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(124 107.5) rotate(160) scale(0.95)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(124 107.5) rotate(160) scale(0.95)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(178 107.5) rotate(30) scale(0.7)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(178 107.5) rotate(30) scale(0.7)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(300 110) rotate(205) scale(0.82)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(300 110) rotate(205) scale(0.82)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(318 110) rotate(25) scale(0.9)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(318 110) rotate(25) scale(0.9)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(470 106) rotate(165) scale(0.8)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(470 106) rotate(165) scale(0.8)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(30 13.5) rotate(-10) scale(0.85)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(30 13.5) rotate(-10) scale(0.85)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><g transform='translate(17 17) rotate(8) scale(1.15)'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/></g><path transform='translate(529 13.2) rotate(195) scale(0.85)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(529 13.2) rotate(195) scale(0.85)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><g transform='translate(543 18) rotate(-12) scale(0.95)'><g fill='%237D93AC' stroke='%23C4D3E2' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23C4D3E2' stroke-width='1'/></g><path transform='translate(543 92) rotate(120) scale(0.9)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(543 92) rotate(120) scale(0.9)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(530 106.5) rotate(170) scale(0.75)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(530 106.5) rotate(170) scale(0.75)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(13 90) rotate(-110) scale(0.85)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(13 90) rotate(-110) scale(0.85)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><g transform='translate(22 104) rotate(20) scale(0.7)'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/></g></svg>");
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) body #send_form {
+:where(html[data-dpt-mode="night"]) body #send_form {
   background-color: rgba(38, 45, 58, 0.92) !important;
 }
-:root:where([data-dpt-mode="night"], :not([data-dpt-mode]):has(.splash-screen)) {
+:root:where([data-dpt-mode="night"]) {
   --mr-vine-line: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 22' width='200' height='22'><path d='M0 6C30 4 70 8 100 6S170 8 200 6' fill='none' stroke='%238FA399' stroke-width='1.5' stroke-linecap='round'/><path transform='translate(56 6.6) rotate(150) scale(1.25)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(56 6.6) rotate(150) scale(1.25)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(146 6.2) rotate(28) scale(1.2)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(146 6.2) rotate(28) scale(1.2)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/></svg>");
   --mr-flower-pink: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-9 -9 18 18'><g transform='rotate(8)'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/></g></svg>");
   --mr-flower-blue: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-9 -9 18 18'><g transform='rotate(-12)'><g fill='%237D93AC' stroke='%23C4D3E2' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23C4D3E2' stroke-width='1'/></g></svg>");
 }
-:root:where([data-dpt-mode="night"], :not([data-dpt-mode]):has(.splash-screen)) {
+:root:where([data-dpt-mode="night"]) {
   --mr-av-frame-bot: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><path d='M8.6 4.9C19 3.9 41.5 4.6 51.6 4.3C55.3 4.6 55.9 7.4 55.6 10.8C55.2 21 56.1 39.6 55.4 50.2C55.1 54.3 52.5 55.6 49.3 55.5C38.6 55.1 20.4 56.1 9.7 55.4C5.6 55.2 4.4 52.9 4.6 49.1C4.9 38.4 4.1 20.6 4.5 10.2C4.7 6.8 6 5.2 8.6 4.9Z' fill='none' stroke='%23A9BCD0' stroke-width='1.7' stroke-linejoin='round'/><path d='M10.5 2.9C22 2.4 38 3.1 47.5 2.7' fill='none' stroke='%23A9BCD0' stroke-width='1' stroke-linecap='round' opacity='.55'/><path transform='translate(49 53) rotate(-35) scale(0.85)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(49 53) rotate(-35) scale(0.85)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(52 49) rotate(-80) scale(0.7)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(52 49) rotate(-80) scale(0.7)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/></svg>");
   --mr-av-frame-user: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><path d='M8.6 4.9C19 3.9 41.5 4.6 51.6 4.3C55.3 4.6 55.9 7.4 55.6 10.8C55.2 21 56.1 39.6 55.4 50.2C55.1 54.3 52.5 55.6 49.3 55.5C38.6 55.1 20.4 56.1 9.7 55.4C5.6 55.2 4.4 52.9 4.6 49.1C4.9 38.4 4.1 20.6 4.5 10.2C4.7 6.8 6 5.2 8.6 4.9Z' fill='none' stroke='%23E0B0B8' stroke-width='1.7' stroke-linejoin='round'/><path d='M10.5 2.9C22 2.4 38 3.1 47.5 2.7' fill='none' stroke='%23E0B0B8' stroke-width='1' stroke-linecap='round' opacity='.55'/><g transform='translate(52.5 52.5) rotate(10) scale(0.8)'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/></g><path transform='translate(45.5 56) rotate(-8) scale(0.65)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(45.5 56) rotate(-8) scale(0.65)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/></svg>");
 }
-:root:where([data-dpt-mode="night"], :not([data-dpt-mode]):has(.splash-screen)) {
+:root:where([data-dpt-mode="night"]) {
   --mr-wreath: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><path d='M169.3 100.0 L166.6 117.8 L160.6 135.0 L146.3 146.3 L133.4 157.8 L117.8 166.6 L100.0 169.8 L82.2 166.3 L67.6 156.1 L51.7 148.3 L40.7 134.2 L31.5 118.4 L34.1 100.0 L35.6 82.7 L41.4 66.2 L50.3 50.3 L65.4 40.1 L83.0 36.7 L100.0 32.7 L117.6 34.4 L135.7 38.2 L147.1 52.9 L158.0 66.5 L164.1 82.8 L170.4 100.0' fill='none' stroke='%238FA399' stroke-width='1.8' stroke-linejoin='round'/><path d='M167.9 124.7 L157.4 140.2 L146.2 155.0 L130.7 165.9 L112.2 169.2 L93.8 170.9 L75.0 168.6 L59.4 157.9 L45.9 145.4 L33.9 130.8 L29.7 112.4 L30.1 93.9 L31.7 75.2 L41.0 58.7 L55.0 46.4 L69.5 34.6 L87.4 28.6 L106.1 30.2 L124.5 32.8' fill='none' stroke='%238FA399' stroke-width='1' stroke-linecap='round' opacity='.5'/><path transform='translate(167.0 111.8) rotate(65) scale(0.95)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(167.0 111.8) rotate(65) scale(0.95)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(155.7 139.0) rotate(340) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(155.7 139.0) rotate(340) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(131.9 160.0) rotate(117) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(131.9 160.0) rotate(117) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(94.1 167.7) rotate(400) scale(0.95)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(94.1 167.7) rotate(400) scale(0.95)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(68.1 160.0) rotate(173) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(68.1 160.0) rotate(173) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(41.1 134.0) rotate(455) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(41.1 134.0) rotate(455) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(32.0 102.4) rotate(233) scale(0.95)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(32.0 102.4) rotate(233) scale(0.95)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(38.4 71.3) rotate(510) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(38.4 71.3) rotate(510) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(58.1 46.4) rotate(287) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(58.1 46.4) rotate(287) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(90.5 32.7) rotate(567) scale(0.95)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(90.5 32.7) rotate(567) scale(0.95)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(123.3 36.1) rotate(345) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(123.3 36.1) rotate(345) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(150.5 54.5) rotate(623) scale(1.15)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(150.5 54.5) rotate(623) scale(1.15)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><path transform='translate(164.7 79.0) rotate(397) scale(0.95)' d='M0 0C2.5-5 8-7.5 13-6.5C11.5-2 6.5 1.5 0 0Z' fill='%235E7468' stroke='%23A3B8A9' stroke-width='1.1' stroke-linejoin='round'/><path transform='translate(164.7 79.0) rotate(397) scale(0.95)' d='M1 -.4C5-2.6 8.5-4.2 11.5-5.4' fill='none' stroke='%23A3B8A9' stroke-width='.7' stroke-linecap='round'/><g transform='translate(56.3 47.9) rotate(8) scale(2.0)'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/></g><g transform='translate(82.4 34.3) rotate(-20) scale(1.3)'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/></g><g transform='translate(41.1 66.0) rotate(15) scale(1.2)'><g fill='%237D93AC' stroke='%23C4D3E2' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23C4D3E2' stroke-width='1'/></g><g transform='translate(148.1 148.1) rotate(30) scale(1.7)'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/></g><g transform='translate(125.5 163.0) rotate(-8) scale(1.1)'><g fill='%237D93AC' stroke='%23C4D3E2' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23C4D3E2' stroke-width='1'/></g><g transform='translate(34.3 82.4) rotate(12) scale(1.0)'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1.1'><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(-5)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(74)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(142)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(221)'/><ellipse cx='0' cy='-4.6' rx='2.9' ry='4.3' transform='rotate(289)'/></g><circle r='2.1' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='1'/></g></svg>");
   --mr-spin-flower: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -10 20 20'><g fill='%23B98790' stroke='%23EBC3CA' stroke-width='1'><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(-5)'/><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(74)'/><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(142)'/><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(221)'/><ellipse cx='0' cy='-4.8' rx='3' ry='4.5' transform='rotate(289)'/></g><circle r='2.2' fill='%23E8CF9E' stroke='%23EBC3CA' stroke-width='.9'/></svg>");
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) body .splash-screen::before {
+:where(html[data-dpt-mode="night"]) body .splash-screen::before {
   color: #E8B9C1;
   text-shadow: 2px 0 0 #262D3A, -2px 0 0 #262D3A, 0 2px 0 #262D3A, 0 -2px 0 #262D3A, 2px 2px 0 #262D3A, -2px -2px 0 #262D3A, 2px -2px 0 #262D3A, -2px 2px 0 #262D3A, 4px 0 1px #262D3A, -4px 0 1px #262D3A, 0 4px 1px #262D3A, 0 -4px 1px #262D3A, 0 0 6px #262D3A !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #extensions_settings .inline-drawer-toggle.inline-drawer-header,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #extensions_settings2 .inline-drawer-toggle.inline-drawer-header,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) #user-settings-block h4,
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) .standoutHeader {
+:where(html[data-dpt-mode="night"]) #extensions_settings .inline-drawer-toggle.inline-drawer-header,
+:where(html[data-dpt-mode="night"]) #extensions_settings2 .inline-drawer-toggle.inline-drawer-header,
+:where(html[data-dpt-mode="night"]) #user-settings-block h4,
+:where(html[data-dpt-mode="night"]) .standoutHeader {
   background-image: linear-gradient(rgba(143, 164, 186, 0.14), rgba(143, 164, 186, 0.14));
   border: 1px solid rgba(143, 164, 186, 0.22);
 }
@@ -1018,7 +1018,7 @@ body #chat .mes[is_user="true"] .mes_block {
   --dpt-switch-sun: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2.8V5M12 19V21.3M2.8 12H5M19 12H21.2M5.4 5.5L7 7.1M17 16.9L18.6 18.5M5.5 18.5L7.1 16.9M17 7.1L18.6 5.5' fill='none' stroke='%239A6863' stroke-width='1.7' stroke-linecap='round'/><path d='M7.6 12.2C7.4 9.6 9.6 7.5 12.1 7.6C14.7 7.7 16.5 9.7 16.4 12.1C16.3 14.7 14.4 16.5 11.9 16.4C9.4 16.3 7.7 14.6 7.6 12.2Z' fill='%23F2DDB0' stroke='%239A6863' stroke-width='1.6'/></svg>");
   --dpt-switch-moon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M15.8 3.6C10.6 4 6.6 8 6.7 13C6.8 18 11 21.3 15.6 20.7C17.4 20.5 18.9 19.7 20 18.6C15.7 18.9 12.3 16 12.1 12C11.9 8.6 13.5 5.7 15.8 3.6Z' fill='%23E8CF9E' stroke='%23F4E6C4' stroke-width='1.3' stroke-linejoin='round'/><path d='M18.2 7.2V10.2M16.7 8.7H19.7' fill='none' stroke='%23EBC3CA' stroke-width='1.3' stroke-linecap='round'/></svg>");
 }
-:root:where([data-dpt-mode="night"], :not([data-dpt-mode]):has(.splash-screen)) {
+:root:where([data-dpt-mode="night"]) {
   --dpt-switch-track: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 26'><path d='M12 3.2C20 2.5 31 3.4 38 2.9C44.5 3 48 7.6 47.8 13C47.6 18.8 43.8 23 37.6 23.1C29 23.5 20 22.6 12.4 23.2C6 23.2 2.2 18.7 2.3 13C2.4 7.3 6 3.4 12 3.2Z' fill='%232B3648' stroke='%23A9BCD0' stroke-width='1.5' stroke-linejoin='round'/></svg>");
 }
 body #dpt-mode-switch {
@@ -1154,13 +1154,13 @@ body .mes .mes_text code:not(pre code) {
 body .mes .mes_text code:not(pre code) {
   border-color: var(--mr-msg-code-border) !important;
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) body .mes[is_user="true"] {
+:where(html[data-dpt-mode="night"]) body .mes[is_user="true"] {
   --mr-msg-em: #A9BCD0;
   --mr-msg-quote: #B9CADB;
   --mr-msg-code-bg: rgba(43, 54, 72, 0.82);
   --mr-msg-code-border: rgba(143, 164, 186, 0.38);
 }
-:where(html[data-dpt-mode="night"], html:not([data-dpt-mode]):has(.splash-screen)) body .mes[is_user="false"] {
+:where(html[data-dpt-mode="night"]) body .mes[is_user="false"] {
   --mr-msg-em: #E8B9C1;
   --mr-msg-quote: #E0B0B8;
   --mr-msg-code-bg: rgba(67, 52, 61, 0.86);
@@ -1212,10 +1212,47 @@ button.addEventListener('click', onClick);
 window.addEventListener('storage', onStorage);
 host?.appendChild(button);
 
+// 主題要的酒館設定：第一次套用時改成扁平聊天、展開訊息按鈕；原值記在 localStorage，拿掉主題時還原。
+const SETTINGS_KEY = 'dried-petal-tea-settings';
+const THEME_SETTINGS = { chat_display: 0, expand_message_actions: true };
+const controls = {
+    chat_display: { selector: '#chat_display', event: 'change' },
+    expand_message_actions: { selector: '#expandMessageActions', event: 'input' },
+};
+const { eventSource, eventTypes } = SillyTavern.getContext();
+
+// 透過酒館原生的設定控制項觸發，讓酒館自己套用畫面和存檔。
+function setSettings(values) {
+    for (const [key, value] of Object.entries(values)) {
+        const { selector, event } = controls[key];
+        const element = $(selector);
+        if (typeof value === 'boolean') element.prop('checked', value);
+        else element.val(String(value));
+        element.trigger(event);
+    }
+}
+
+// 腳本可能在載入畫面時就執行，要等酒館讀完使用者設定（APP_READY）才改，否則會被讀進來的設定蓋掉。
+function applyThemeSettings() {
+    if (localStorage.getItem(SETTINGS_KEY)) return;
+    const current = SillyTavern.getContext().powerUserSettings;
+    const original = Object.fromEntries(Object.keys(THEME_SETTINGS).map(key => [key, current[key]]));
+    localStorage.setItem(SETTINGS_KEY, JSON.stringify(original));
+    setSettings(THEME_SETTINGS);
+}
+
+eventSource.on(eventTypes.APP_READY, applyThemeSettings);
+
 export function cleanup() {
     button.removeEventListener('click', onClick);
     window.removeEventListener('storage', onStorage);
     button.remove();
     delete root.dataset.dptMode;
+    eventSource.removeListener(eventTypes.APP_READY, applyThemeSettings);
+    const original = localStorage.getItem(SETTINGS_KEY);
+    if (original) {
+        localStorage.removeItem(SETTINGS_KEY);
+        setSettings(JSON.parse(original));
+    }
 }
 </script>
