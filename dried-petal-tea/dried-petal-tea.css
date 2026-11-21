@@ -150,11 +150,8 @@ body #top-settings-holder .drawer-icon {
   text-shadow: none !important;
   filter: none !important;
 }
-#top-settings-holder .drawer-icon:hover {
-  color: #9A6863 !important;
-  opacity: 1 !important;
-}
-/* 已打開的分頁：只換成深玫瑰色，不加底色 */
+/* 滑過和已打開的分頁：只換成深玫瑰色，不加底色 */
+#top-settings-holder .drawer-icon:hover,
 #top-settings-holder .drawer-icon.openIcon {
   color: #9A6863 !important;
   opacity: 1 !important;
@@ -178,8 +175,7 @@ body #top-settings-holder .drawer-icon {
   margin: 4px 4px !important;
 }
 /* 左右對稱：角色頭像離左邊、使用者頭像離右邊（捲軸）一樣是 16px，有沒有 Moonlit 都一樣 */
-body #sheld { padding-left: 0 !important; padding-right: 0 !important; }
-body #chat { padding-left: 0 !important; padding-right: 0 !important; }
+body #sheld, body #chat { padding-left: 0 !important; padding-right: 0 !important; }
 body #chat .mes {
   width: auto !important;
   margin-left: 16px !important;
@@ -242,7 +238,6 @@ body #chat .mes .mes_text { padding-bottom: 0 !important; }
   box-shadow: none !important;
   background: none !important;
   padding: 0 !important;
-  overflow: hidden;
   border-radius: 10px !important;
 }
 #chat#chat .mes .avatar img {
@@ -355,7 +350,8 @@ body input[type="checkbox"]:active { transform: scale(0.88) rotate(-4deg); }
 /* 原本用 ::before 畫的勾勾藏起來 */
 body input[type="checkbox"]::before,
 body input[type="checkbox"]::after { display: none !important; }
-body input[type="checkbox"]:focus-visible { outline: 1.5px dashed var(--mr-pink-deep) !important; outline-offset: 2px; }
+/* 鍵盤焦點：勾選框、日夜開關、花瓣罐按鈕共用同一圈虛線 */
+body :is(input[type="checkbox"], #dpt-mode-switch, #dpt-jar-btn):focus-visible { outline: 1.5px dashed var(--mr-pink-deep) !important; outline-offset: 2px; }
 
 /* ---- 單選鈕 ---- */
 body input[type="radio"] { accent-color: var(--mr-pink-deep); filter: none !important; }
@@ -695,9 +691,7 @@ body #chat {
   width: auto !important;
   border-bottom-left-radius: 26px !important;
   border-bottom-right-radius: 26px !important;
-}
-/* 聊天欄底色半透明加模糊，不靠 Moonlit 也看得到背景圖 */
-body #chat {
+  /* 聊天欄底色半透明加模糊，不靠 Moonlit 也看得到背景圖 */
   background-color: var(--SmartThemeChatTintColor) !important;
   -webkit-backdrop-filter: blur(10px) !important;
   backdrop-filter: blur(10px) !important;
@@ -930,9 +924,8 @@ body #chat .welcomePanel .recentChatsTitle {
   color: #9A6863;
   font-weight: normal;
 }
-/* 齒輪和收合鈕：酒館預設 30% 透明度加黑色陰影，在淺色底上會糊成灰點 */
+/* 齒輪和收合鈕：酒館預設只有 30% 透明度，在淺色底上會糊成灰點（陰影已由上面 .mes_button 統一拿掉） */
 body #chat .welcomePanel .welcomeHeaderTitle .mes_button {
-  filter: none !important;
   opacity: 0.65 !important;
   color: var(--mr-ink-soft) !important;
   transition: opacity 0.2s, color 0.2s;
@@ -1139,10 +1132,7 @@ body #chat .mes[is_user="true"] .mes_block {
 :where(html[data-dpt-mode="night"]) #top-settings-holder .drawer-icon.closedIcon {
   color: #8FA4BA !important;
 }
-:where(html[data-dpt-mode="night"]) #top-settings-holder .drawer-icon:hover {
-  color: #E8B9C1 !important;
-}
-:where(html[data-dpt-mode="night"]) #top-settings-holder .drawer-icon.openIcon {
+:where(html[data-dpt-mode="night"]) #top-settings-holder .drawer-icon:is(:hover, .openIcon) {
   color: #E8B9C1 !important;
 }
 :where(html[data-dpt-mode="night"]) .drawer-content,
@@ -1283,10 +1273,6 @@ body #dpt-mode-switch::before {
 body #dpt-mode-switch[aria-checked="true"]::before {
   left: 26px;
   background-image: var(--dpt-switch-moon);
-}
-body #dpt-mode-switch:focus-visible {
-  outline: 1.5px dashed var(--mr-pink-deep) !important;
-  outline-offset: 2px;
 }
 /* 手機／窄螢幕：頂欄放不下，縮小後排進圖示列 */
 @media (max-width: 1000px) {
@@ -1567,7 +1553,6 @@ body #dpt-jar-btn::before {
 }
 body #dpt-jar-btn:hover { color: var(--mr-pink-deep); }
 body #dpt-jar-btn:hover::before { transform: rotate(-8deg); }
-body #dpt-jar-btn:focus-visible { outline: 1.5px dashed var(--mr-pink-deep) !important; outline-offset: 2px; }
 :root[data-dpt-mode="night"] body #dpt-jar-btn { color: #A9BCD0; }
 @media (max-width: 1000px) {
   body #dpt-jar-btn {
@@ -1878,7 +1863,7 @@ function renderJar(pickIndex) {
     body.replaceChildren();
 
     if (!jar.length) {
-        body.append(el('div', 'dpt-jar-empty', '罐子還是空的。\n在訊息旁邊點 ✿，就能把喜歡的句子收進來；\n先反白一段字再點，可以收那一段。'));
+        body.append(el('div', 'dpt-jar-empty', '罐子還是空的。\n在訊息旁邊點 ✿，就能把喜歡的句子收進來；\n先反白一段字再點，可以只收那一段。'));
         body.firstChild.style.whiteSpace = 'pre-line';
         return;
     }
