@@ -29,6 +29,7 @@
 - Hand-drawn details: vine borders on the input box and under the top bar, hand-drawn top bar icons, flower slider thumbs, wobbly checkboxes, a leaf send button and sketched avatar frames.
 - Favorite characters get a little flower before their name, which appears as soon as you favorite them.
 - The loading screen shows a flower wreath with the theme name.
+- The home page shows the wreath and a line of the day from the petal jar, with recent chats below as a phone-style chat list. The line of the day requires Theme Script.
 - Petals burst from the center of the screen and drift down when SillyTavern opens.
 - Petal jar: click ✿ on a message to keep a line you like (select text first to keep just that part), and the jar shows a line of the day. It is just a fun quote collection and does not link back to the original message. Requires Theme Script.
 - On first use the theme sets the chat style to Flat and turns on expanded message actions. You can change them back afterwards, and they are restored when you remove the theme. Requires Theme Script.

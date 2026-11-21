@@ -915,7 +915,15 @@ body #chat .welcomePanel .welcomeHeader {
   justify-content: flex-start;
   gap: 8px;
 }
-body #chat .welcomePanel .recentChatsTitle { flex-grow: 0; color: var(--mr-pink-deep); font-weight: normal; }
+body #chat .welcomePanel .recentChatsTitle {
+  flex-grow: 0;
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: rgba(251, 248, 245, 0.85);
+  color: #9A6863;
+  font-weight: normal;
+}
+:where(html[data-dpt-mode="night"]) body #chat .welcomePanel .recentChatsTitle { background: rgba(38, 45, 58, 0.85); color: #E8B9C1; }
 
 /* 聊天列表：一張紙卡，每個聊天一列，用虛線隔開 */
 body #chat .welcomeRecent {
