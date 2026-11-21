@@ -908,6 +908,14 @@ body #chat .welcomePanel .recentChatsTitle {
   color: #9A6863;
   font-weight: normal;
 }
+/* 齒輪和收合鈕：酒館預設 30% 透明度加黑色陰影，在淺色底上會糊成灰點 */
+body #chat .welcomePanel .welcomeHeaderTitle .mes_button {
+  filter: none !important;
+  opacity: 0.65 !important;
+  color: var(--mr-ink-soft) !important;
+  transition: opacity 0.2s, color 0.2s;
+}
+body #chat .welcomePanel .welcomeHeaderTitle .mes_button:hover { opacity: 1 !important; color: var(--mr-pink-deep) !important; }
 :where(html[data-dpt-mode="night"]) body #chat .welcomePanel .recentChatsTitle { background: rgba(38, 45, 58, 0.85); color: #E8B9C1; }
 
 /* 首頁上方：藤蔓花框裡的一張照片，那句話壓在照片底部的半透明紙白上；寬度跟著畫面縮，手機也放得下 */
