@@ -898,7 +898,7 @@ body #chat .welcomeRecent {
   background: rgba(251, 248, 245, 0.85);
   border: 1px solid var(--mr-blue-soft);
   border-radius: 18px;
-  padding: 4px 0;
+  padding: 0;
   overflow: hidden;
 }
 body #chat .welcomeRecent .recentChatList { gap: 0; }
@@ -969,12 +969,18 @@ body #chat .welcomeRecent .recentChat .chatActions button {
   justify-content: center !important;
   padding: 0 !important;
   border-radius: 50% !important;
-  font-size: 0.7em;
+  font-size: 11px;
   line-height: 1 !important;
 }
+/* 圖示框鎖成 1em 正方形、行高 1：Font Awesome 的字形是照這個比例設計的，換平台也會置中 */
 body #chat .welcomeRecent .recentChat .chatActions button i {
+  display: block !important;
+  width: 1em !important;
+  height: 1em !important;
   margin: 0 !important;
+  padding: 0 !important;
   line-height: 1 !important;
+  text-align: center;
 }
 /* 釘選、改名、刪除平常藏起來，滑鼠移上去才出現（手機沒有滑鼠，一直顯示） */
 @media (hover: hover) {
