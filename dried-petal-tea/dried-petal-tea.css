@@ -1741,7 +1741,7 @@ function renderJar(pickIndex) {
     body.replaceChildren();
 
     if (!jar.length) {
-        body.append(el('div', 'dpt-jar-empty', '罐子還是空的。\n在訊息旁邊點 ✿，就能把喜歡的句子收進來；\n先反白一段字再點，可以只收那一段。'));
+        body.append(el('div', 'dpt-jar-empty', '罐子還是空的。\n在訊息旁邊點 ✿，就能把喜歡的句子收進來；\n先反白一段字再點，可以只收一小段 ( ⌯\'-\'⌯)♡'));
         body.firstChild.style.whiteSpace = 'pre-line';
         return;
     }
