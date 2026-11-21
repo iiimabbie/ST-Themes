@@ -848,6 +848,12 @@ button {
   color: var(--mr-ink);
 }
 
+/* 首頁：只留「最近的聊天」，藏起助理的招呼訊息和下面那排快捷按鈕 */
+body #chat .mes[type="assistant_message"],
+body #chat .mes[type="welcome_prompt"] {
+  display: none !important;
+}
+
 /* 使用者訊息：文字和氣泡底部留出距離 */
 body #chat .mes[is_user="true"] .mes_block {
   padding-bottom: 15px !important;
