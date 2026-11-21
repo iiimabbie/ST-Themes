@@ -680,6 +680,24 @@ body :is(.standoutHeader, #user-settings-block h4, #extensions_settings .inline-
 body .standoutHeader.range-block-title {
   margin-top: 5px;
 }
+/* select2 下拉清單不要陰影 */
+body .select2-dropdown {
+  box-shadow: none !important;
+}
+/* 原生下拉選單（像 API 連線的「可用模型」）展開的清單是瀏覽器畫的，不吃 select2 的樣式；
+   酒館給選項深灰底白字，在淺色主題上很難讀。改成跟 select2 清單一樣：燕麥底、墨色字，
+   目前選的那個用淺粉底；夜間跟著變數換色。滑過去那一列的高亮是作業系統畫的，CSS 改不到 */
+body select option {
+  background-color: var(--mr-pink-soft);
+  color: var(--mr-ink);
+}
+body select option:not(:checked) {
+  background-color: var(--mr-cream);
+  color: var(--mr-ink);
+}
+body select option[disabled]:not(:checked) {
+  color: var(--mr-ink-soft);
+}
 /* 多選下拉（像世界書的「啟用的世界書」）裡打字用的小輸入框，原本是一塊白底加淺框，
    疊在外框裡像多一個白框；改透明無框，只留外面那一圈 */
 body .select2-container .select2-search--inline .select2-search__field {
