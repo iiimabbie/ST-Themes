@@ -902,13 +902,12 @@ body #chat .welcomePanel::before {
   box-sizing: border-box;
   width: min(460px, calc(100% - 44px));
   aspect-ratio: 3 / 2;
-  margin: 28px 0 14px;
-  border: 22px solid transparent;
-  border-radius: 26px;
-  background:
-    url("https://i.pinimg.com/736x/0c/4b/f9/0c4bf9163a8e43b1a20b0bc653583dc5.jpg") center / cover no-repeat padding-box,
-    rgba(251, 248, 245, 0.85) border-box;
-  border-image: var(--mr-vine-frame) 48 / 48px / 18px round stretch;
+  margin: 22px 0 14px;
+  /* 藤蔓線在框圖的 12/48 處：外推 12px 讓藤蔓剛好壓在照片邊上，圓角對齊藤蔓轉角 */
+  border: 1px solid transparent;
+  border-radius: 34px;
+  background: url("https://i.pinimg.com/736x/0c/4b/f9/0c4bf9163a8e43b1a20b0bc653583dc5.jpg") center / cover no-repeat border-box;
+  border-image: var(--mr-vine-frame) 48 / 48px / 12px round stretch;
   filter: drop-shadow(0 4px 10px rgba(90, 85, 96, 0.12));
 }
 body #chat .welcomePanel::after {
@@ -927,14 +926,9 @@ body #chat .welcomePanel::after {
   line-height: 1.6;
   text-align: center;
 }
-:where(html[data-dpt-mode="night"]) body #chat .welcomePanel::before {
-  background:
-    url("https://i.pinimg.com/736x/0c/4b/f9/0c4bf9163a8e43b1a20b0bc653583dc5.jpg") center / cover no-repeat padding-box,
-    rgba(38, 45, 58, 0.85) border-box;
-}
 :where(html[data-dpt-mode="night"]) body #chat .welcomePanel::after { background: rgba(38, 45, 58, 0.7); color: #C4D3E2; }
 @media (max-width: 600px) {
-  body #chat .welcomePanel::before { width: calc(100% - 36px); border-width: 16px; border-image-width: 38px; border-image-outset: 14px; border-radius: 20px; margin: 20px 0 10px; }
+  body #chat .welcomePanel::before { width: calc(100% - 30px); border-image-width: 36px; border-image-outset: 9px; border-radius: 25px; margin: 16px 0 10px; }
 }
 
 /* 聊天列表：一張紙卡，每個聊天一列，用虛線隔開 */
