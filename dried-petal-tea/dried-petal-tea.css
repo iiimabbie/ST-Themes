@@ -664,6 +664,15 @@ body #user-settings-block .inline-drawer-header {
   background-color: transparent !important;
   border: 1px solid rgba(126, 147, 165, 0.22) !important;
 }
+/* 所有面板的標題列一樣高：有塞按鈕的那幾條（像「介面主題」）是 30px，其他純文字的也撐到 30px，
+   文字垂直置中；原本是一般區塊排版的標題改成橫排，文字和旁邊的 ? 圖示隔 5px */
+body :is(.standoutHeader, #user-settings-block h4, #extensions_settings .inline-drawer-toggle.inline-drawer-header, #extensions_settings2 .inline-drawer-toggle.inline-drawer-header) {
+  box-sizing: border-box;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
 /* 進階格式化：用 Chat Completion API 時，酒館標了 data-cc-null 的設定（反灰、沒作用）直接不顯示，
    上面的提示條也一起藏；判斷條件跟酒館反灰的規則一樣，用 Text Completion 時照常顯示。
    右上角的進階匯入／匯出也有這個標記，但還用得到，留著 */
