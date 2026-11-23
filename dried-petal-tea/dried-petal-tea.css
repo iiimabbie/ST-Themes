@@ -164,26 +164,110 @@ body #top-settings-holder .drawer-icon {
   box-shadow: 0 6px 24px rgba(120, 105, 110, 0.10) !important;
 }
 
-/* ---- 聊天訊息 ---- */
-/* 外層不要框：只保留裡面的訊息氣泡 */
-.mes,
-.mes[is_user="true"],
-.mes[is_user="false"] {
+/* ---- 聊天訊息：一則一張卡片 ----
+   頂端一條乾燥花橫幅，頭像置中壓在橫幅下緣，下面依序是樓層／秒數／token、名字和時間、虛線，內文吃滿整張卡片寬度。
+   橫幅想換成自己的圖：在自訂 CSS 加 :root { --dpt-banner-char: url("圖片網址") center / cover no-repeat; }
+   （使用者那則用 --dpt-banner-user），沒設就是預設的小花 */
+:root {
+  --dpt-banner-flowers:
+    var(--mr-spin-flower) 4% 28% / 20px no-repeat,
+    var(--mr-spin-flower) 12% 78% / 13px no-repeat,
+    var(--mr-spin-flower) 22% 24% / 11px no-repeat,
+    var(--mr-spin-flower) 33% 66% / 16px no-repeat,
+    var(--mr-spin-flower) 64% 82% / 12px no-repeat,
+    var(--mr-spin-flower) 78% 90% / 17px no-repeat;
+  --dpt-banner-tint-char: rgba(196, 210, 222, 0.9);
+  --dpt-banner-tint-user: rgba(226, 196, 190, 0.9);
+}
+/* 左右對稱：卡片離左右邊緣都是 16px，有沒有 Moonlit 都一樣 */
+body #sheld, body #chat { padding-left: 0 !important; padding-right: 0 !important; }
+#chat#chat .mes {
+  position: relative !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  width: auto !important;
+  margin: 10px 16px !important;
+  padding: 0 !important;
+  border-radius: 15px !important;
+  border: 1px solid rgba(90, 85, 96, 0.1) !important;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.03) !important;
+  overflow: visible !important;
+}
+/* 卡片底色：使用者粉、AI 藍 */
+#chat#chat .mes[is_user="true"] { background: rgba(238, 221, 217, 0.85) !important; }
+#chat#chat .mes[is_user="false"] { background: rgba(220, 228, 234, 0.80) !important; }
+#chat#chat .mes::before {
+  content: "" !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 66px;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 15px 15px 0 0;
+  background: var(--dpt-banner-char, var(--dpt-banner-flowers), linear-gradient(180deg, var(--dpt-banner-tint-char), transparent)) !important;
+}
+#chat#chat .mes[is_user="true"]::before {
+  background: var(--dpt-banner-user, var(--dpt-banner-flowers), linear-gradient(180deg, var(--dpt-banner-tint-user), transparent)) !important;
+}
+/* 頭像在上、置中；樓層、秒數、token 排成一行放在頭像下面 */
+#chat#chat .mes .mesAvatarWrapper {
+  position: relative !important;
+  z-index: 1 !important;
+  order: 0 !important;
+  width: 100% !important;
+  margin: 34px 0 0 !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, auto) !important;
+  justify-content: center !important;
+  column-gap: 8px !important;
+}
+#chat#chat .mes .mesAvatarWrapper .avatar {
+  grid-column: 1 / -1 !important;
+  justify-self: center !important;
+  width: 60px !important;
+  height: 60px !important;
+  margin: 0 0 6px !important;
+}
+#chat#chat .mes .mesAvatarWrapper :is(.mesIDDisplay, .mes_timer, .tokenCounterDisplay) {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 11px !important;
+  text-align: center !important;
+}
+#chat#chat .mes .mes_block {
+  order: 1 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 15px !important;
   background: none !important;
   border: none !important;
   box-shadow: none !important;
-  margin: 4px 4px !important;
 }
-/* 左右對稱：角色頭像離左邊、使用者頭像離右邊（捲軸）一樣是 16px，有沒有 Moonlit 都一樣 */
-body #sheld, body #chat { padding-left: 0 !important; padding-right: 0 !important; }
-body #chat .mes {
-  width: auto !important;
-  margin-left: 16px !important;
-  margin-right: 16px !important;
+/* 名字和時間置中，底下一條虛線隔開內文；訊息按鈕固定在卡片右上角 */
+#chat#chat .mes .ch_name {
+  position: static !important;
+  justify-content: center !important;
+  margin: 0 0 10px !important;
+  padding: 2px 0 8px !important;
+  border-bottom: 1px dashed rgba(126, 147, 165, 0.4) !important;
 }
-/* 「1/1」滑動計數和右箭頭：放在氣泡內側右下角的「頁尾列」，
+#chat#chat .mes[is_user="true"] .ch_name { border-bottom-color: rgba(184, 142, 138, 0.45) !important; }
+#chat#chat .mes .ch_name > .flex-container.flex1 {
+  flex: none !important;
+  justify-content: center !important;
+}
+#chat#chat .mes .ch_name .mes_buttons {
+  position: absolute !important;
+  top: 10px !important;
+  right: 12px !important;
+  z-index: 2 !important;
+}
+/* 「1/1」滑動計數和右箭頭：放在卡片內側右下角的「頁尾列」，
    計數和箭頭改成橫排（原本直排，最新一則會疊到兩行高），
-   氣泡底部預留 34px 給這一列，文字就不會跟 1/1 重疊（有沒有 Moonlit 都一樣） */
+   角色卡片底部預留 40px 給這一列，文字就不會跟左右箭頭、1/1 重疊（有沒有 Moonlit 都一樣） */
 body #chat .mes[is_user="false"] .swipeRightBlock {
   bottom: 14px !important;
   right: 10px !important;
@@ -191,35 +275,9 @@ body #chat .mes[is_user="false"] .swipeRightBlock {
   align-items: center !important;
   gap: 4px !important;
 }
-body #chat .mes[is_user="false"] .mes_block { padding-bottom: 34px !important; }
+#chat#chat .mes[is_user="false"] .mes_block { padding-bottom: 40px !important; }
+#chat#chat .mes[is_user="true"] .mes_block { padding-bottom: 15px !important; }
 body #chat .mes .mes_text { padding-bottom: 0 !important; }
-/* 氣泡形狀：沿用 Moonlit Echoes 的數值，沒裝 Moonlit 時也會是一樣的圓角氣泡 */
-#chat .mes { padding: 10px 0 !important; }
-#chat .mes .mes_block {
-  border-radius: 15px !important;
-  padding: 15px 15px 0 !important;
-  border: 1px solid rgba(90, 85, 96, 0.1) !important;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.03) !important;
-}
-/* 訊息氣泡：使用者粉、AI 藍 */
-.mes[is_user="true"] .mes_block {
-  background-color: rgba(238, 221, 217, 0.85) !important;
-}
-.mes[is_user="false"] .mes_block {
-  background-color: rgba(220, 228, 234, 0.80) !important;
-}
-/* 使用者訊息：頭像、樓層號、token 數整塊移到右邊 */
-#chat .mes[is_user="true"] .mes_block { order: 1; }
-#chat .mes[is_user="true"] .mesAvatarWrapper {
-  order: 2;
-  margin-left: 10px !important;
-  margin-right: 0 !important;
-}
-/* 角色訊息：頭像和氣泡之間留 10px */
-#chat .mes[is_user="false"] .mesAvatarWrapper {
-  margin-right: 10px !important;
-  margin-left: 0 !important;
-}
 .mes .name_text { color: var(--mr-pink-deep) !important; font-weight: 600; }
 .mes[is_user="false"] .name_text { color: var(--mr-blue-deep) !important; }
 .mes .timestamp, .mesIDDisplay, .mes_timer, .tokenCounterDisplay { color: var(--mr-ink-soft) !important; }
@@ -950,15 +1008,12 @@ body #chat .welcomeRecent .recentChat .chatActions button i {
 :where(html[data-dpt-mode="night"]) body #chat .welcomeRecent { background: rgba(38, 45, 58, 0.85); }
 :where(html[data-dpt-mode="night"]) body #chat .welcomeRecent .recentChatList .recentChat:hover { background: rgba(67, 52, 61, 0.55) !important; }
 
-/* 使用者訊息：文字和氣泡底部留出距離 */
-body #chat .mes[is_user="true"] .mes_block {
-  padding-bottom: 15px !important;
-}
-
 /* =========================================================
    黑夜模式（深夜藍莓）：只列出和白天不同的部分
    ========================================================= */
 :root:where([data-dpt-mode="night"]) {
+  --dpt-banner-tint-char: rgba(70, 88, 112, 0.9);
+  --dpt-banner-tint-user: rgba(98, 74, 88, 0.9);
   --mr-cream: #1E2430;
   --mr-paper: #262D3A;
   --mr-pink: #C99AA3;
@@ -1021,15 +1076,15 @@ body #chat .mes[is_user="true"] .mes_block {
   background-color: rgba(38, 45, 58, 0.96) !important;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.31) !important;
 }
-:where(html[data-dpt-mode="night"]) #chat .mes .mes_block {
+:where(html[data-dpt-mode="night"]) #chat#chat .mes {
   border: 1px solid rgba(227, 230, 236, 0.06) !important;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25) !important;
 }
-:where(html[data-dpt-mode="night"]) .mes[is_user="true"] .mes_block {
-  background-color: rgba(67, 52, 61, 0.90) !important;
+:where(html[data-dpt-mode="night"]) #chat#chat .mes[is_user="true"] {
+  background: rgba(67, 52, 61, 0.90) !important;
 }
-:where(html[data-dpt-mode="night"]) .mes[is_user="false"] .mes_block {
-  background-color: rgba(43, 54, 72, 0.85) !important;
+:where(html[data-dpt-mode="night"]) #chat#chat .mes[is_user="false"] {
+  background: rgba(43, 54, 72, 0.85) !important;
 }
 :where(html[data-dpt-mode="night"]) .mes_text q,
 :where(html[data-dpt-mode="night"]) .mes_text blockquote {
