@@ -766,6 +766,33 @@ body #completion_prompt_manager .completion_prompt_manager_header {
 body #completion_prompt_manager .completion_prompt_manager_header_advanced span {
   filter: none;
 }
+/* 提示詞清單外框：換成和輸入框同一套的手繪藤蔓。不往外推（外推會被側欄捲動區切掉），
+   改用內距把每一列收進藤蔓裡，角落的小花才不會壓到字；它是 text_pole，要蓋過上面輸入框共用的 !important 細框 */
+body #completion_prompt_manager #completion_prompt_manager_list {
+  border: 2px solid transparent !important;
+  border-radius: 18px;
+  /* border 簡寫會把 border-image 重設掉，上面那條又是 !important，這裡也要 !important 才留得住 */
+  border-image: var(--mr-vine-frame) 48 / 30px round stretch !important;
+  background-clip: padding-box;
+  padding: 14px 12px;
+}
+/* 每一列原本都有一圈細框（關著的酒館另外給白框）：開著的拿掉框；關著的也不要框，改成整列淡掉，滑過去再清楚一點 */
+body #completion_prompt_manager #completion_prompt_manager_list li.completion_prompt_manager_prompt {
+  border-color: transparent;
+}
+body #completion_prompt_manager #completion_prompt_manager_list li.completion_prompt_manager_prompt.completion_prompt_manager_prompt_disabled {
+  border-color: transparent;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+body #completion_prompt_manager #completion_prompt_manager_list li.completion_prompt_manager_prompt_disabled:hover {
+  opacity: 0.8;
+}
+/* 關著的名字酒館給 30% 白，淺色底上看不到；改成一般文字色，淡的程度交給上面的整列透明度 */
+body #completion_prompt_manager #completion_prompt_manager_list .completion_prompt_manager_prompt_disabled .completion_prompt_manager_prompt_name,
+body #completion_prompt_manager #completion_prompt_manager_list .completion_prompt_manager_prompt_disabled .completion_prompt_manager_prompt_name .prompt-manager-inspect-action {
+  color: var(--SmartThemeBodyColor);
+}
 /* select2 下拉清單不要陰影 */
 body .select2-dropdown {
   box-shadow: none !important;
