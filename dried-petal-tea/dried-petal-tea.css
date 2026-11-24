@@ -800,7 +800,7 @@ body #completion_prompt_manager #completion_prompt_manager_list .completion_prom
 body #completion_prompt_manager .mingyu-prompt-group-content {
   border-left-color: rgba(142, 156, 136, 0.55);
   margin-left: calc(4px + 0.5em - 0.5px);
-  padding-left: calc(19.5px - 0.5em);
+  padding-left: calc(20.5px - 0.5em);
 }
 /* 點群組標題後插件給的藍色焦點框會一直留著（手機上尤其明顯）；滑鼠、觸控點的不要框，
    鍵盤切換焦點時才顯示，顏色換成主題的深藍 */
