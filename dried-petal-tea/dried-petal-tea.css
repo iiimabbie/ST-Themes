@@ -794,9 +794,22 @@ body #completion_prompt_manager #completion_prompt_manager_list .completion_prom
   color: var(--SmartThemeBodyColor);
 }
 /* 提示詞摺疊插件展開群組時左邊那條線：插件給深灰 #444，系統是淺色模式時又換成 #ddd，跟主題不搭；
-   改成藤蔓外框同色的淡綠，夜間跟著換。沒裝插件就沒有這個元素，規則不會作用 */
+   改成藤蔓外框同色的淡綠，夜間跟著換。沒裝插件就沒有這些元素，規則不會作用。
+   線原本貼在箭頭左緣（外距 4px），往右挪到箭頭正中間：箭頭外距 4px + 寬 1em 的一半 - 線寬一半；
+   內距扣掉同樣的量，群組裡的列位置不變 */
 body #completion_prompt_manager .mingyu-prompt-group-content {
   border-left-color: rgba(142, 156, 136, 0.55);
+  margin-left: calc(4px + 0.5em - 0.5px);
+  padding-left: calc(19.5px - 0.5em);
+}
+/* 點群組標題後插件給的藍色焦點框會一直留著（手機上尤其明顯）；滑鼠、觸控點的不要框，
+   鍵盤切換焦點時才顯示，顏色換成主題的深藍 */
+body #completion_prompt_manager .mingyu-prompt-group > summary:focus {
+  outline: none;
+}
+body #completion_prompt_manager .mingyu-prompt-group > summary:focus-visible {
+  outline: 1px solid var(--mr-blue-deep);
+  outline-offset: 1px;
 }
 :where(html[data-dpt-mode="night"]) body #completion_prompt_manager .mingyu-prompt-group-content {
   border-left-color: rgba(143, 163, 153, 0.45);
