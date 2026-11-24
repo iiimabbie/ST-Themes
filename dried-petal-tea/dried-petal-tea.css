@@ -793,6 +793,14 @@ body #completion_prompt_manager #completion_prompt_manager_list .completion_prom
 body #completion_prompt_manager #completion_prompt_manager_list .completion_prompt_manager_prompt_disabled .completion_prompt_manager_prompt_name .prompt-manager-inspect-action {
   color: var(--SmartThemeBodyColor);
 }
+/* 提示詞摺疊插件展開群組時左邊那條線：插件給深灰 #444，系統是淺色模式時又換成 #ddd，跟主題不搭；
+   改成藤蔓外框同色的淡綠，夜間跟著換。沒裝插件就沒有這個元素，規則不會作用 */
+body #completion_prompt_manager .mingyu-prompt-group-content {
+  border-left-color: rgba(142, 156, 136, 0.55);
+}
+:where(html[data-dpt-mode="night"]) body #completion_prompt_manager .mingyu-prompt-group-content {
+  border-left-color: rgba(143, 163, 153, 0.45);
+}
 /* select2 下拉清單不要陰影 */
 body .select2-dropdown {
   box-shadow: none !important;
